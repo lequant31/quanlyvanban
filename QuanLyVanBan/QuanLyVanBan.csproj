@@ -1,0 +1,505 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{85273F2A-D5D7-4F00-AA64-4408F40C9D51}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QuanLyVanBan</RootNamespace>
+    <AssemblyName>QuanLyVanBan</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Jommans-Ladybug-Folder-Documents.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v19.1" />
+    <Reference Include="DevExpress.Charts.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v19.1" />
+    <Reference Include="DevExpress.DataAccess.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v19.1.Drawing, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.1.Core" />
+    <Reference Include="DevExpress.RichEdit.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.1.Export, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.1" />
+    <Reference Include="DevExpress.Utils.v19.1.UI, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v19.1" />
+    <Reference Include="DevExpress.Sparkline.v19.1.Core" />
+    <Reference Include="DevExpress.XtraCharts.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.1" />
+    <Reference Include="DevExpress.XtraGauges.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPdfViewer.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.1.Extensions, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CanBo.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CanBoTheoDoiVanBan.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoQuanBanHanhVanBan.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DonVi.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enum.cs" />
+    <Compile Include="ExportVanBan_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Extension\CoQuanBanHanh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Extension\CoQuanBanHanh.Designer.cs">
+      <DependentUpon>CoQuanBanHanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extension\UcFaceChange.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Extension\UcFaceChange.Designer.cs">
+      <DependentUpon>UcFaceChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extension\UcLinhVucBanHanh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Extension\UcLinhVucBanHanh.Designer.cs">
+      <DependentUpon>UcLinhVucBanHanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extension\UcDonVi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Extension\UcDonVi.Designer.cs">
+      <DependentUpon>UcDonVi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extension\UcLanhDaoDonVi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Extension\UcLanhDaoDonVi.Designer.cs">
+      <DependentUpon>UcLanhDaoDonVi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extension\UcLoaiVanBan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Extension\UcLoaiVanBan.Designer.cs">
+      <DependentUpon>UcLoaiVanBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extension\ViewPdf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Extension\ViewPdf.Designer.cs">
+      <DependentUpon>ViewPdf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVanBanGiamDocKyBanHanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVanBanGiamDocKyBanHanh.Designer.cs">
+      <DependentUpon>FormVanBanGiamDocKyBanHanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GDKyBanHanh.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GDVanBanDen.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllCanBo_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllCoQuanBanhanhVanBan_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllCoQuanVaDonVi_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllDonvi_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllGDKyBanHanh_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllGDVanBanDen_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllLanhDaoDonvi_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllLinhVucBanHanh_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllLoaiVanBan_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllTheoDoiVanBan1_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllTheoDoiVanBan_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetDonViSearch_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetOneCoQuanbanHanhVanBan_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetOneDonVi_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetOneGDKyBanHanh_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetOneGDVanBanDen_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetOneLanhDaoDonVi_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetOneLinhVucBanHanh_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetOneLoaiVanBan_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetOneTheoDoiVanBanDen_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LanhDaoDonVi.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LinhVucBanHanh.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoaiVanBan.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyCongViecEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyCongViecEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyCongViecEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyCongViecEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyCongViecEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\FormExport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\FormExport.Designer.cs">
+      <DependentUpon>FormExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\VanBanNoiBo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\VanBanNoiBo.Designer.cs">
+      <DependentUpon>VanBanNoiBo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\XtraReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\XtraReport2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\XtraReport2.Designer.cs">
+      <DependentUpon>XtraReport2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="searchlanhdaodonvi_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TheoDoiVanBan.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TienDoCongViec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TienDoCongViec.Designer.cs">
+      <DependentUpon>TienDoCongViec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcTheoDoiVanBanGDNoComment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcTheoDoiVanBanGDNoComment.Designer.cs">
+      <DependentUpon>UcTheoDoiVanBanGDNoComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcTheoDoiVanBanDenHetHan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcTheoDoiVanBanDenHetHan.Designer.cs">
+      <DependentUpon>UcTheoDoiVanBanDenHetHan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcTheoDoiVanBanDenSapHetHan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcTheoDoiVanBanDenSapHetHan.Designer.cs">
+      <DependentUpon>UcTheoDoiVanBanDenSapHetHan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcTheoDoiVanBanDen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcTheoDoiVanBanDen.Designer.cs">
+      <DependentUpon>UcTheoDoiVanBanDen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcVanBanGiamDocKyBanHanh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcVanBanGiamDocKyBanHanh.Designer.cs">
+      <DependentUpon>UcVanBanGiamDocKyBanHanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewDonViVaCoQuan.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewGDKyBanHanh.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewGDVanBanDen.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewGDVanBanDenGDNoComment_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewGDVanBanDenHetHan_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewGDVanBanDenSapHetHan_Result.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTheoDoiVanBan.cs">
+      <DependentUpon>QuanLyCongViecEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YKienGiamDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YKienGiamDoc.Designer.cs">
+      <DependentUpon>YKienGiamDoc.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Extension\CoQuanBanHanh.resx">
+      <DependentUpon>CoQuanBanHanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extension\UcFaceChange.resx">
+      <DependentUpon>UcFaceChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extension\UcLinhVucBanHanh.resx">
+      <DependentUpon>UcLinhVucBanHanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extension\UcDonVi.resx">
+      <DependentUpon>UcDonVi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extension\UcLanhDaoDonVi.resx">
+      <DependentUpon>UcLanhDaoDonVi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extension\UcLoaiVanBan.resx">
+      <DependentUpon>UcLoaiVanBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extension\ViewPdf.resx">
+      <DependentUpon>ViewPdf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVanBanGiamDocKyBanHanh.resx">
+      <DependentUpon>FormVanBanGiamDocKyBanHanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report\FormExport.resx">
+      <DependentUpon>FormExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\test.resx">
+      <DependentUpon>test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\VanBanNoiBo.resx">
+      <DependentUpon>VanBanNoiBo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\XtraReport1.resx">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\XtraReport2.resx">
+      <DependentUpon>XtraReport2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TienDoCongViec.resx">
+      <DependentUpon>TienDoCongViec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcTheoDoiVanBanGDNoComment.resx">
+      <DependentUpon>UcTheoDoiVanBanGDNoComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcTheoDoiVanBanDenHetHan.resx">
+      <DependentUpon>UcTheoDoiVanBanDenHetHan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcTheoDoiVanBanDenSapHetHan.resx">
+      <DependentUpon>UcTheoDoiVanBanDenSapHetHan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcTheoDoiVanBanDen.resx">
+      <DependentUpon>UcTheoDoiVanBanDen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcVanBanGiamDocKyBanHanh.resx">
+      <DependentUpon>UcVanBanGiamDocKyBanHanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YKienGiamDoc.resx">
+      <DependentUpon>YKienGiamDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EntityDeploy Include="QuanLyCongViecEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuanLyCongViecEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="QuanLyCongViecEntities.edmx.diagram">
+      <DependentUpon>QuanLyCongViecEntities.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Jommans-Ladybug-Folder-Documents.ico" />
+    <Content Include="QuanLyCongViecEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyCongViecEntities.edmx</DependentUpon>
+      <LastGenOutput>QuanLyCongViecEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="QuanLyCongViecEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyCongViecEntities.edmx</DependentUpon>
+      <LastGenOutput>QuanLyCongViecEntities.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

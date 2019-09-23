@@ -1,0 +1,2211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="QuanLyCongViecModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CanBo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="SoHieuCAND" Type="nvarchar" MaxLength="50" />
+          <Property Name="IdDonvi" Type="uniqueidentifier" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="Actived" Type="bit" />
+        </EntityType>
+        <EntityType Name="CanBoTheoDoiVanBan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IdTheoDoiVanBan" Type="uniqueidentifier" />
+          <Property Name="IdCanBo" Type="uniqueidentifier" />
+          <Property Name="DateNgayNhan" Type="date" />
+          <Property Name="DateNgayXong" Type="date" />
+          <Property Name="newcolumn" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="CoQuanBanHanhVanBan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="InOrOut" Type="bit" />
+          <Property Name="KyHieu" Type="nvarchar" MaxLength="50" />
+          <Property Name="TenCoQuan" Type="nvarchar" MaxLength="150" />
+          <Property Name="PrintName" Type="nvarchar" MaxLength="150" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="DonVi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="InOrOut" Type="bit" />
+          <Property Name="MaDonVi" Type="nvarchar" MaxLength="50" />
+          <Property Name="TenDonVi" Type="nvarchar" MaxLength="150" />
+          <Property Name="PrintName" Type="nvarchar" MaxLength="150" />
+          <Property Name="Createdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GDKyBanHanh">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IdLinhVucBanHanh" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IdLoaiVanBan" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IdDonViThamMuu" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IdLanhDaoPhuTrach" Type="uniqueidentifier" />
+          <Property Name="CanBoThamMuu" Type="nvarchar" MaxLength="150" />
+          <Property Name="DateTrinhVanBan" Type="date" />
+          <Property Name="DateKyVanBan" Type="date" />
+          <Property Name="NumberVanBan" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateVanBan" Type="date" />
+          <Property Name="TrichYeuVanBan" Type="nvarchar(max)" />
+          <Property Name="Partitons" Type="nvarchar" MaxLength="5" />
+          <Property Name="TaiLieuDinhKem" Type="nvarchar(max)" />
+          <Property Name="IdCanBoNhap" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GDVanBanDen">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DateNgayNhan" Type="date" />
+          <Property Name="IdCoQuanBanHanhVanBan" Type="uniqueidentifier" />
+          <Property Name="IdLoaiVanBan" Type="uniqueidentifier" />
+          <Property Name="IdLinhVucBanHanh" Type="uniqueidentifier" />
+          <Property Name="SoVanBan" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateNgayPhatHanh" Type="date" />
+          <Property Name="TrichYeuVanBan" Type="nvarchar(max)" />
+          <Property Name="CommentGD" Type="nvarchar(max)" />
+          <Property Name="NumberSoCongVan" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDDonViChuTri" Type="uniqueidentifier" />
+          <Property Name="IDDonVIPhoiHop" Type="uniqueidentifier" />
+          <Property Name="DateNgayChiDao" Type="date" />
+          <Property Name="DateNgayPhaiHoanThanh" Type="date" />
+          <Property Name="PhaiBaoCao" Type="bit" />
+          <Property Name="NguoiNhanVanBan" Type="nvarchar" MaxLength="150" />
+          <Property Name="DateChuyenVanBanToiDonVi" Type="date" />
+          <Property Name="HoanThanh" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChuaHoanThanh" Type="nvarchar" MaxLength="50" />
+          <Property Name="DangThucHien" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChuaThucHien" Type="nvarchar" MaxLength="50" />
+          <Property Name="ThucHienCham" Type="nvarchar" MaxLength="50" />
+          <Property Name="KetThucCongViec" Type="nvarchar" MaxLength="50" />
+          <Property Name="TomTatKetQua" Type="nvarchar(max)" />
+          <Property Name="Patition" Type="nvarchar" MaxLength="50" />
+          <Property Name="TaiLIeuDinhKem" Type="nvarchar(max)" />
+          <Property Name="IdCanBoNhap" Type="uniqueidentifier" />
+          <Property Name="DateHoanThanh" Type="date" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="LanhDaoDonVi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TenLanhDao" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ChucVu" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="IdDonVi" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Createdate" Type="datetime" Nullable="false" />
+          <Property Name="Actived" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LinhVucBanHanh">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CodeLinhVuc" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NameLinhVuc" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LoaiVanBan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CodeVanBan" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NameVanBan" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Createdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TheoDoiVanBan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IdGDVanBanDen" Type="uniqueidentifier" />
+          <Property Name="CanBoThuLy" Type="nvarchar" MaxLength="150" />
+          <Property Name="CommentGD" Type="nvarchar(max)" />
+          <Property Name="PGDPhuTrach" Type="nvarchar" MaxLength="150" />
+          <Property Name="IdDonViChucNang" Type="uniqueidentifier" />
+          <Property Name="IdLanhDaoPhuTrach" Type="uniqueidentifier" />
+          <Property Name="TienDoCongViec" Type="nvarchar(max)" />
+          <Property Name="NumberDate" Type="nvarchar" MaxLength="150" />
+          <Property Name="TaiLieuDinhKem" Type="nvarchar(max)" />
+          <Property Name="Createdate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QuanLyCongViecEnd.dbo.ViewDonViVaCoQuan' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewDonViVaCoQuan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="InOrOut" Type="bit" />
+          <Property Name="KyHieu" Type="nvarchar" MaxLength="50" />
+          <Property Name="TenCoQuan" Type="nvarchar" MaxLength="150" />
+          <Property Name="PrintName" Type="nvarchar" MaxLength="150" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QuanLyCongViecEnd.dbo.ViewGDKyBanHanh' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewGDKyBanHanh">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdCanBoNhap" />
+            <PropertyRef Name="CreateDate" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NameLinhVuc" Type="nvarchar(max)" />
+          <Property Name="NameVanBan" Type="nvarchar(max)" />
+          <Property Name="TenDonVi" Type="nvarchar" MaxLength="150" />
+          <Property Name="TenLanhDao" Type="nvarchar" MaxLength="150" />
+          <Property Name="CanBoThamMuu" Type="nvarchar" MaxLength="150" />
+          <Property Name="DateTrinhVanBan" Type="date" />
+          <Property Name="DateKyVanBan" Type="date" />
+          <Property Name="NumberVanBan" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateVanBan" Type="date" />
+          <Property Name="TrichYeuVanBan" Type="nvarchar(max)" />
+          <Property Name="TaiLieuDinhKem" Type="nvarchar(max)" />
+          <Property Name="IdCanBoNhap" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QuanLyCongViecEnd.dbo.ViewGDVanBanDen' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewGDVanBanDen">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="TienDoCongViec" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DateNgayNhan" Type="date" />
+          <Property Name="KyHieu" Type="nvarchar" MaxLength="50" />
+          <Property Name="TenCoQuan" Type="nvarchar" MaxLength="150" />
+          <Property Name="NameVanBan" Type="nvarchar(max)" />
+          <Property Name="SoVanBan" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateNgayPhatHanh" Type="date" />
+          <Property Name="NameLinhVuc" Type="nvarchar(max)" />
+          <Property Name="TrichYeuVanBan" Type="nvarchar(max)" />
+          <Property Name="CommentGD" Type="nvarchar(max)" />
+          <Property Name="NumberSoCongVan" Type="nvarchar" MaxLength="50" />
+          <Property Name="TenDonVi1" Type="nvarchar" MaxLength="50" />
+          <Property Name="TenDonVi2" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateNgayChiDao" Type="date" />
+          <Property Name="DateNgayPhaiHoanThanh" Type="date" />
+          <Property Name="PhaiBaoCao" Type="bit" />
+          <Property Name="NguoiNhanVanBan" Type="nvarchar" MaxLength="150" />
+          <Property Name="DateChuyenVanBanToiDonVi" Type="date" />
+          <Property Name="TienDoCongViec" Type="nvarchar" MaxLength="304" Nullable="false" />
+          <Property Name="HoanThanh" Type="nvarchar" MaxLength="50" />
+          <Property Name="TomTatKetQua" Type="nvarchar(max)" />
+          <Property Name="tailieu" Type="nvarchar(max)" />
+          <Property Name="DateHoanThanh" Type="date" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QuanLyCongViecEnd.dbo.ViewTheoDoiVanBan' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewTheoDoiVanBan">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdGDVanBanDen" />
+            <PropertyRef Name="TenDonVi" />
+            <PropertyRef Name="TenLanhDao" />
+            <PropertyRef Name="Createdate" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IdGDVanBanDen" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PGDPhuTrach" Type="nvarchar" MaxLength="150" />
+          <Property Name="CanBoThuLy" Type="nvarchar" MaxLength="150" />
+          <Property Name="NumberDate" Type="nvarchar" MaxLength="150" />
+          <Property Name="TaiLieuDinhKem" Type="nvarchar(max)" />
+          <Property Name="TenDonVi" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="TenLanhDao" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="CommentGD" Type="nvarchar(max)" />
+          <Property Name="Createdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CanBoNhap_DonVi">
+          <End Role="DonVi" Type="Self.DonVi" Multiplicity="0..1" />
+          <End Role="CanBo" Type="Self.CanBo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DonVi">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CanBo">
+              <PropertyRef Name="IdDonvi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LanhDaoDonVi_DonVi">
+          <End Role="DonVi" Type="Self.DonVi" Multiplicity="1" />
+          <End Role="LanhDaoDonVi" Type="Self.LanhDaoDonVi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DonVi">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LanhDaoDonVi">
+              <PropertyRef Name="IdDonVi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TheoDoiVanBan_GDVanBanDen">
+          <End Role="GDVanBanDen" Type="Self.GDVanBanDen" Multiplicity="0..1" />
+          <End Role="TheoDoiVanBan" Type="Self.TheoDoiVanBan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GDVanBanDen">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TheoDoiVanBan">
+              <PropertyRef Name="IdGDVanBanDen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="AddCoQuanBanHanhVanBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="TenCoQuan" Type="nvarchar" Mode="In" />
+          <Parameter Name="KyHieu" Type="nvarchar" Mode="In" />
+          <Parameter Name="InOrOut" Type="bit" Mode="In" />
+          <Parameter Name="Printname" Type="nvarchar" Mode="In" />
+          <Parameter Name="Createdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="AddDonVi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="TenDonVi" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaDonVi" Type="nvarchar" Mode="In" />
+          <Parameter Name="InOrOut" Type="bit" Mode="In" />
+          <Parameter Name="PrintName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Createdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="AddGDKyBanHanh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IdLinhVucBanHanh" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IdLoaiVanBan" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IdDonViThamMuu" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IdLanhDaoPhuTrach" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CanBoThamMuu" Type="nvarchar" Mode="In" />
+          <Parameter Name="DateTrinhVanBan" Type="date" Mode="In" />
+          <Parameter Name="DateKyVanBan" Type="date" Mode="In" />
+          <Parameter Name="NumberVanBan" Type="nvarchar" Mode="In" />
+          <Parameter Name="DateVanBan" Type="date" Mode="In" />
+          <Parameter Name="TrichYeuVanBan" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="partions" Type="nvarchar" Mode="In" />
+          <Parameter Name="TaiLieuDinhKem" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="IdCanBoNhap" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CreateDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="AddGDVanBanDen" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="DateNgayNhan" Type="date" Mode="In" />
+          <Parameter Name="IdCoQuanBanHanhVanBan" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IdLoaiVanBan" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IdLinhVucBanHanh" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="SoVanBan" Type="nvarchar" Mode="In" />
+          <Parameter Name="DateNgayPhatHanh" Type="date" Mode="In" />
+          <Parameter Name="TrichYeuVanBan" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="CommentGD" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="NumberSoCongVan" Type="nvarchar" Mode="In" />
+          <Parameter Name="IDDonViChuTri" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IDDonVIPhoiHop" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="DateNgayChiDao" Type="date" Mode="In" />
+          <Parameter Name="DateNgayPhaiHoanThanh" Type="date" Mode="In" />
+          <Parameter Name="PhaiBaoCao" Type="bit" Mode="In" />
+          <Parameter Name="NguoiNhanVanBan" Type="nvarchar" Mode="In" />
+          <Parameter Name="DateChuyenVanBanToiDonVi" Type="datetime" Mode="In" />
+          <Parameter Name="HoanThanh" Type="nvarchar" Mode="In" />
+          <Parameter Name="ChuaHoanThanh" Type="nvarchar" Mode="In" />
+          <Parameter Name="DangThucHien" Type="nvarchar" Mode="In" />
+          <Parameter Name="ChuaThucHien" Type="nvarchar" Mode="In" />
+          <Parameter Name="ThucHienCham" Type="nvarchar" Mode="In" />
+          <Parameter Name="KetThucCongViec" Type="nvarchar" Mode="In" />
+          <Parameter Name="TomTatKetQua" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Patition" Type="nvarchar" Mode="In" />
+          <Parameter Name="TaiLIeuDinhKem" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="IdCanBoNhap" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="DateHoanThanh" Type="date" Mode="In" />
+          <Parameter Name="CreateDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="AddLanhDaoDonVi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="TenLanhDao" Type="nvarchar" Mode="In" />
+          <Parameter Name="ChucVu" Type="nvarchar" Mode="In" />
+          <Parameter Name="IdDonVi" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Createdate" Type="datetime" Mode="In" />
+          <Parameter Name="Active" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="AddLinhVucBanHanh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CodeLinhVuc" Type="nvarchar" Mode="In" />
+          <Parameter Name="NameLinhVuc" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Createdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="AddLoaiVanBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CodeVanBan" Type="nvarchar" Mode="In" />
+          <Parameter Name="NameVanBan" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Createdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="AddTheoDoiVanBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IdGDVanBanDen" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CanBoThuLy" Type="nvarchar" Mode="In" />
+          <Parameter Name="CommentGD" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="PGDPhuTrach" Type="nvarchar" Mode="In" />
+          <Parameter Name="IdDonViChucNang" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IdLanhDaoPhuTrach" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="TienDoCongViec" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="NumBerDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="TaiLieuDinhKem" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Createdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="CheckExistVanBanDen" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SoVanBan" Type="nvarchar" Mode="In" />
+          <Parameter Name="DateNgayPhatHanh" Type="date" Mode="In" />
+        </Function>
+        <Function Name="DeleteCoQuanBanHanhVanBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="DeleteDonVi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="DeleteGDKyBanHanh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="DeleteGDVanBanDen" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="DeleteLanhDaoDonVi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="DeleteLinhVucBanHanh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="DeleteLoaiVanBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="DeleteTheoDoiVanBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="EditCoQuanBanHanhVanBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="TenCoQuan" Type="nvarchar" Mode="In" />
+          <Parameter Name="KyHieu" Type="nvarchar" Mode="In" />
+          <Parameter Name="InOrOut" Type="bit" Mode="In" />
+          <Parameter Name="PrintName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="EditDonVi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="TenDonVi" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaDonVi" Type="nvarchar" Mode="In" />
+          <Parameter Name="InOrOut" Type="bit" Mode="In" />
+          <Parameter Name="PrintName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="EditGDKyBanHanh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IdLinhVucBanHanh" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IdLoaiVanBan" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IdDonViThamMuu" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IdLanhDaoPhuTrach" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CanBoThamMuu" Type="nvarchar" Mode="In" />
+          <Parameter Name="DateTrinhVanBan" Type="date" Mode="In" />
+          <Parameter Name="DateKyVanBan" Type="date" Mode="In" />
+          <Parameter Name="NumberVanBan" Type="nvarchar" Mode="In" />
+          <Parameter Name="DateVanBan" Type="date" Mode="In" />
+          <Parameter Name="TrichYeuVanBan" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="partions" Type="nvarchar" Mode="In" />
+          <Parameter Name="TaiLieuDinhKem" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="EditGDVanBanDen" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="DateNgayNhan" Type="date" Mode="In" />
+          <Parameter Name="IdCoQuanBanHanhVanBan" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IdLoaiVanBan" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IdLinhVucBanHanh" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="SoVanBan" Type="nvarchar" Mode="In" />
+          <Parameter Name="DateNgayPhatHanh" Type="date" Mode="In" />
+          <Parameter Name="TrichYeuVanBan" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="CommentGD" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="NumberSoCongVan" Type="nvarchar" Mode="In" />
+          <Parameter Name="IDDonViChuTri" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IDDonVIPhoiHop" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="DateNgayChiDao" Type="date" Mode="In" />
+          <Parameter Name="DateNgayPhaiHoanThanh" Type="date" Mode="In" />
+          <Parameter Name="PhaiBaoCao" Type="bit" Mode="In" />
+          <Parameter Name="NguoiNhanVanBan" Type="nvarchar" Mode="In" />
+          <Parameter Name="DateChuyenVanBanToiDonVi" Type="datetime" Mode="In" />
+          <Parameter Name="HoanThanh" Type="nvarchar" Mode="In" />
+          <Parameter Name="ChuaHoanThanh" Type="nvarchar" Mode="In" />
+          <Parameter Name="DangThucHien" Type="nvarchar" Mode="In" />
+          <Parameter Name="ChuaThucHien" Type="nvarchar" Mode="In" />
+          <Parameter Name="ThucHienCham" Type="nvarchar" Mode="In" />
+          <Parameter Name="KetThucCongViec" Type="nvarchar" Mode="In" />
+          <Parameter Name="TomTatKetQua" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Patition" Type="nvarchar" Mode="In" />
+          <Parameter Name="TaiLIeuDinhKem" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="DateHoanThanh" Type="date" Mode="In" />
+        </Function>
+        <Function Name="EditLanhDaoDonVi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="TenLanhDao" Type="nvarchar" Mode="In" />
+          <Parameter Name="ChucVu" Type="nvarchar" Mode="In" />
+          <Parameter Name="Actived" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="EditLinhVucBanHanh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CodeLinhVuc" Type="nvarchar" Mode="In" />
+          <Parameter Name="NameLinhVuc" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="EditLoaiVanBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CodeVanBan" Type="nvarchar" Mode="In" />
+          <Parameter Name="NameVanBan" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="EditTheoDoiVanBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CanBoThuLy" Type="nvarchar" Mode="In" />
+          <Parameter Name="CommentGD" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="PGDPhuTrach" Type="nvarchar" Mode="In" />
+          <Parameter Name="IdDonViChucNang" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IdLanhDaoPhuTrach" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="TienDoCongViec" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="NumBerDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="TaiLieuDinhKem" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="ExportVanBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="DateTuNgay" Type="date" Mode="In" />
+          <Parameter Name="DateDenNgay" Type="date" Mode="In" />
+        </Function>
+        <Function Name="GetAllCanBo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetAllCoQuanBanhanhVanBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetAllCoQuanVaDonVi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetAllDonvi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetAllGDKyBanHanh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetAllGDVanBanDen" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetAllLanhDaoDonvi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetAllLinhVucBanHanh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetAllLoaiVanBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetAllTheoDoiVanBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdGDVanBanDen" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="GetAllTheoDoiVanBan1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetAllViewDonViVaCoQuan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetDonViSearch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetOneCoQuanbanHanhVanBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="GetOneDonVi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="GetOneGDKyBanHanh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="GetOneGDVanBanDen" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="GetOneLanhDaoDonVi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="GetOneLinhVucBanHanh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="GetOneLoaiVanBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="GetOneTheoDoiVanBanDen" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="searchlanhdaodonvi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="ViewGDVanBanDenGDNoComment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="ViewGDVanBanDenHetHan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="ViewGDVanBanDenSapHetHan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="QuanLyCongViecModelStoreContainer">
+          <EntitySet Name="CanBo" EntityType="Self.CanBo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CanBoTheoDoiVanBan" EntityType="Self.CanBoTheoDoiVanBan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoQuanBanHanhVanBan" EntityType="Self.CoQuanBanHanhVanBan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DonVi" EntityType="Self.DonVi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GDKyBanHanh" EntityType="Self.GDKyBanHanh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GDVanBanDen" EntityType="Self.GDVanBanDen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LanhDaoDonVi" EntityType="Self.LanhDaoDonVi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LinhVucBanHanh" EntityType="Self.LinhVucBanHanh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoaiVanBan" EntityType="Self.LoaiVanBan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TheoDoiVanBan" EntityType="Self.TheoDoiVanBan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ViewDonViVaCoQuan" EntityType="Self.ViewDonViVaCoQuan" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewDonViVaCoQuan].[Id] AS [Id], 
+    [ViewDonViVaCoQuan].[InOrOut] AS [InOrOut], 
+    [ViewDonViVaCoQuan].[KyHieu] AS [KyHieu], 
+    [ViewDonViVaCoQuan].[TenCoQuan] AS [TenCoQuan], 
+    [ViewDonViVaCoQuan].[PrintName] AS [PrintName], 
+    [ViewDonViVaCoQuan].[CreateDate] AS [CreateDate]
+    FROM [dbo].[ViewDonViVaCoQuan] AS [ViewDonViVaCoQuan]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewGDKyBanHanh" EntityType="Self.ViewGDKyBanHanh" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewGDKyBanHanh].[Id] AS [Id], 
+    [ViewGDKyBanHanh].[NameLinhVuc] AS [NameLinhVuc], 
+    [ViewGDKyBanHanh].[NameVanBan] AS [NameVanBan], 
+    [ViewGDKyBanHanh].[TenDonVi] AS [TenDonVi], 
+    [ViewGDKyBanHanh].[TenLanhDao] AS [TenLanhDao], 
+    [ViewGDKyBanHanh].[CanBoThamMuu] AS [CanBoThamMuu], 
+    [ViewGDKyBanHanh].[DateTrinhVanBan] AS [DateTrinhVanBan], 
+    [ViewGDKyBanHanh].[DateKyVanBan] AS [DateKyVanBan], 
+    [ViewGDKyBanHanh].[NumberVanBan] AS [NumberVanBan], 
+    [ViewGDKyBanHanh].[DateVanBan] AS [DateVanBan], 
+    [ViewGDKyBanHanh].[TrichYeuVanBan] AS [TrichYeuVanBan], 
+    [ViewGDKyBanHanh].[TaiLieuDinhKem] AS [TaiLieuDinhKem], 
+    [ViewGDKyBanHanh].[IdCanBoNhap] AS [IdCanBoNhap], 
+    [ViewGDKyBanHanh].[CreateDate] AS [CreateDate]
+    FROM [dbo].[ViewGDKyBanHanh] AS [ViewGDKyBanHanh]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewGDVanBanDen" EntityType="Self.ViewGDVanBanDen" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewGDVanBanDen].[Id] AS [Id], 
+    [ViewGDVanBanDen].[DateNgayNhan] AS [DateNgayNhan], 
+    [ViewGDVanBanDen].[KyHieu] AS [KyHieu], 
+    [ViewGDVanBanDen].[TenCoQuan] AS [TenCoQuan], 
+    [ViewGDVanBanDen].[NameVanBan] AS [NameVanBan], 
+    [ViewGDVanBanDen].[SoVanBan] AS [SoVanBan], 
+    [ViewGDVanBanDen].[DateNgayPhatHanh] AS [DateNgayPhatHanh], 
+    [ViewGDVanBanDen].[NameLinhVuc] AS [NameLinhVuc], 
+    [ViewGDVanBanDen].[TrichYeuVanBan] AS [TrichYeuVanBan], 
+    [ViewGDVanBanDen].[CommentGD] AS [CommentGD], 
+    [ViewGDVanBanDen].[NumberSoCongVan] AS [NumberSoCongVan], 
+    [ViewGDVanBanDen].[TenDonVi1] AS [TenDonVi1], 
+    [ViewGDVanBanDen].[TenDonVi2] AS [TenDonVi2], 
+    [ViewGDVanBanDen].[DateNgayChiDao] AS [DateNgayChiDao], 
+    [ViewGDVanBanDen].[DateNgayPhaiHoanThanh] AS [DateNgayPhaiHoanThanh], 
+    [ViewGDVanBanDen].[PhaiBaoCao] AS [PhaiBaoCao], 
+    [ViewGDVanBanDen].[NguoiNhanVanBan] AS [NguoiNhanVanBan], 
+    [ViewGDVanBanDen].[DateChuyenVanBanToiDonVi] AS [DateChuyenVanBanToiDonVi], 
+    [ViewGDVanBanDen].[TienDoCongViec] AS [TienDoCongViec], 
+    [ViewGDVanBanDen].[HoanThanh] AS [HoanThanh], 
+    [ViewGDVanBanDen].[TomTatKetQua] AS [TomTatKetQua], 
+    [ViewGDVanBanDen].[tailieu] AS [tailieu], 
+    [ViewGDVanBanDen].[DateHoanThanh] AS [DateHoanThanh], 
+    [ViewGDVanBanDen].[CreateDate] AS [CreateDate]
+    FROM [dbo].[ViewGDVanBanDen] AS [ViewGDVanBanDen]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewTheoDoiVanBan" EntityType="Self.ViewTheoDoiVanBan" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewTheoDoiVanBan].[Id] AS [Id], 
+    [ViewTheoDoiVanBan].[IdGDVanBanDen] AS [IdGDVanBanDen], 
+    [ViewTheoDoiVanBan].[PGDPhuTrach] AS [PGDPhuTrach], 
+    [ViewTheoDoiVanBan].[CanBoThuLy] AS [CanBoThuLy], 
+    [ViewTheoDoiVanBan].[NumberDate] AS [NumberDate], 
+    [ViewTheoDoiVanBan].[TaiLieuDinhKem] AS [TaiLieuDinhKem], 
+    [ViewTheoDoiVanBan].[TenDonVi] AS [TenDonVi], 
+    [ViewTheoDoiVanBan].[TenLanhDao] AS [TenLanhDao], 
+    [ViewTheoDoiVanBan].[CommentGD] AS [CommentGD], 
+    [ViewTheoDoiVanBan].[Createdate] AS [Createdate]
+    FROM [dbo].[ViewTheoDoiVanBan] AS [ViewTheoDoiVanBan]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_CanBoNhap_DonVi" Association="Self.FK_CanBoNhap_DonVi">
+            <End Role="DonVi" EntitySet="DonVi" />
+            <End Role="CanBo" EntitySet="CanBo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LanhDaoDonVi_DonVi" Association="Self.FK_LanhDaoDonVi_DonVi">
+            <End Role="DonVi" EntitySet="DonVi" />
+            <End Role="LanhDaoDonVi" EntitySet="LanhDaoDonVi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TheoDoiVanBan_GDVanBanDen" Association="Self.FK_TheoDoiVanBan_GDVanBanDen">
+            <End Role="GDVanBanDen" EntitySet="GDVanBanDen" />
+            <End Role="TheoDoiVanBan" EntitySet="TheoDoiVanBan" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QuanLyCongViecModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CanBo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="SoHieuCAND" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdDonvi" Type="Guid" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="Actived" Type="Boolean" />
+          <NavigationProperty Name="DonVi" Relationship="QuanLyCongViecModel.FK_CanBoNhap_DonVi" FromRole="CanBo" ToRole="DonVi" />
+        </EntityType>
+        <EntityType Name="GDKyBanHanh">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="IdLinhVucBanHanh" Type="Guid" Nullable="false" />
+          <Property Name="IdLoaiVanBan" Type="Guid" Nullable="false" />
+          <Property Name="IdDonViThamMuu" Type="Guid" Nullable="false" />
+          <Property Name="IdLanhDaoPhuTrach" Type="Guid" />
+          <Property Name="CanBoThamMuu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DateTrinhVanBan" Type="DateTime" Precision="0" />
+          <Property Name="DateKyVanBan" Type="DateTime" Precision="0" />
+          <Property Name="NumberVanBan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateVanBan" Type="DateTime" Precision="0" />
+          <Property Name="TrichYeuVanBan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Partitons" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="TaiLieuDinhKem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IdCanBoNhap" Type="Guid" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="LanhDaoDonVi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="TenLanhDao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ChucVu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdDonVi" Type="Guid" Nullable="false" />
+          <Property Name="Createdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Actived" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="DonVi" Relationship="QuanLyCongViecModel.FK_LanhDaoDonVi_DonVi" FromRole="LanhDaoDonVi" ToRole="DonVi" />
+        </EntityType>
+        <EntityType Name="LinhVucBanHanh">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="CodeLinhVuc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NameLinhVuc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="LoaiVanBan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="CodeVanBan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NameVanBan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Createdate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="QuanLyCongViecEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CanBo" EntityType="Self.CanBo" />
+          <EntitySet Name="GDKyBanHanh" EntityType="Self.GDKyBanHanh" />
+          <EntitySet Name="LanhDaoDonVi" EntityType="Self.LanhDaoDonVi" />
+          <EntitySet Name="LinhVucBanHanh" EntityType="Self.LinhVucBanHanh" />
+          <EntitySet Name="LoaiVanBan" EntityType="Self.LoaiVanBan" />
+          <FunctionImport Name="AddGDKyBanHanh">
+            <Parameter Name="Id" Mode="In" Type="Guid" />
+            <Parameter Name="IdLinhVucBanHanh" Mode="In" Type="Guid" />
+            <Parameter Name="IdLoaiVanBan" Mode="In" Type="Guid" />
+            <Parameter Name="IdDonViThamMuu" Mode="In" Type="Guid" />
+            <Parameter Name="IdLanhDaoPhuTrach" Mode="In" Type="Guid" />
+            <Parameter Name="CanBoThamMuu" Mode="In" Type="String" />
+            <Parameter Name="DateTrinhVanBan" Mode="In" Type="DateTime" />
+            <Parameter Name="DateKyVanBan" Mode="In" Type="DateTime" />
+            <Parameter Name="NumberVanBan" Mode="In" Type="String" />
+            <Parameter Name="DateVanBan" Mode="In" Type="DateTime" />
+            <Parameter Name="TrichYeuVanBan" Mode="In" Type="String" />
+            <Parameter Name="partions" Mode="In" Type="String" />
+            <Parameter Name="TaiLieuDinhKem" Mode="In" Type="String" />
+            <Parameter Name="IdCanBoNhap" Mode="In" Type="Guid" />
+            <Parameter Name="CreateDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="AddLanhDaoDonVi">
+            <Parameter Name="Id" Mode="In" Type="Guid" />
+            <Parameter Name="TenLanhDao" Mode="In" Type="String" />
+            <Parameter Name="ChucVu" Mode="In" Type="String" />
+            <Parameter Name="IdDonVi" Mode="In" Type="Guid" />
+            <Parameter Name="Createdate" Mode="In" Type="DateTime" />
+            <Parameter Name="Active" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="AddLinhVucBanHanh">
+            <Parameter Name="Id" Mode="In" Type="Guid" />
+            <Parameter Name="CodeLinhVuc" Mode="In" Type="String" />
+            <Parameter Name="NameLinhVuc" Mode="In" Type="String" />
+            <Parameter Name="Createdate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="AddLoaiVanBan">
+            <Parameter Name="Id" Mode="In" Type="Guid" />
+            <Parameter Name="CodeVanBan" Mode="In" Type="String" />
+            <Parameter Name="NameVanBan" Mode="In" Type="String" />
+            <Parameter Name="Createdate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteGDKyBanHanh">
+          <Parameter Name="Id" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteLanhDaoDonVi">
+          <Parameter Name="Id" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteLinhVucBanHanh">
+          <Parameter Name="Id" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteLoaiVanBan">
+          <Parameter Name="Id" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="EditGDKyBanHanh">
+            <Parameter Name="Id" Mode="In" Type="Guid" />
+            <Parameter Name="IdLinhVucBanHanh" Mode="In" Type="Guid" />
+            <Parameter Name="IdLoaiVanBan" Mode="In" Type="Guid" />
+            <Parameter Name="IdDonViThamMuu" Mode="In" Type="Guid" />
+            <Parameter Name="IdLanhDaoPhuTrach" Mode="In" Type="Guid" />
+            <Parameter Name="CanBoThamMuu" Mode="In" Type="String" />
+            <Parameter Name="DateTrinhVanBan" Mode="In" Type="DateTime" />
+            <Parameter Name="DateKyVanBan" Mode="In" Type="DateTime" />
+            <Parameter Name="NumberVanBan" Mode="In" Type="String" />
+            <Parameter Name="DateVanBan" Mode="In" Type="DateTime" />
+            <Parameter Name="TrichYeuVanBan" Mode="In" Type="String" />
+            <Parameter Name="partions" Mode="In" Type="String" />
+            <Parameter Name="TaiLieuDinhKem" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="EditLanhDaoDonVi">
+            <Parameter Name="Id" Mode="In" Type="Guid" />
+            <Parameter Name="TenLanhDao" Mode="In" Type="String" />
+            <Parameter Name="ChucVu" Mode="In" Type="String" />
+            <Parameter Name="Actived" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="EditLinhVucBanHanh">
+            <Parameter Name="Id" Mode="In" Type="Guid" />
+            <Parameter Name="CodeLinhVuc" Mode="In" Type="String" />
+            <Parameter Name="NameLinhVuc" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="EditLoaiVanBan">
+            <Parameter Name="Id" Mode="In" Type="Guid" />
+            <Parameter Name="CodeVanBan" Mode="In" Type="String" />
+            <Parameter Name="NameVanBan" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAllCanBo" ReturnType="Collection(QuanLyCongViecModel.GetAllCanBo_Result)" />
+          <FunctionImport Name="GetDonViSearch" ReturnType="Collection(QuanLyCongViecModel.GetDonViSearch_Result)" />
+          <FunctionImport Name="GetOneGDKyBanHanh" ReturnType="Collection(QuanLyCongViecModel.GetOneGDKyBanHanh_Result)">
+          <Parameter Name="Id" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="GetOneLinhVucBanHanh" ReturnType="Collection(QuanLyCongViecModel.GetOneLinhVucBanHanh_Result)">
+          <Parameter Name="Id" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="GetOneLoaiVanBan" ReturnType="Collection(QuanLyCongViecModel.GetOneLoaiVanBan_Result)">
+          <Parameter Name="Id" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="searchlanhdaodonvi" ReturnType="Collection(QuanLyCongViecModel.searchlanhdaodonvi_Result)">
+          <Parameter Name="Id" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <EntitySet Name="CanBoTheoDoiVanBan" EntityType="QuanLyCongViecModel.CanBoTheoDoiVanBan" />
+          <FunctionImport Name="AddTheoDoiVanBan">
+            <Parameter Name="Id" Mode="In" Type="Guid" />
+            <Parameter Name="IdGDVanBanDen" Mode="In" Type="Guid" />
+            <Parameter Name="CanBoThuLy" Mode="In" Type="String" />
+            <Parameter Name="CommentGD" Mode="In" Type="String" />
+            <Parameter Name="PGDPhuTrach" Mode="In" Type="String" />
+            <Parameter Name="IdDonViChucNang" Mode="In" Type="Guid" />
+            <Parameter Name="IdLanhDaoPhuTrach" Mode="In" Type="Guid" />
+            <Parameter Name="TienDoCongViec" Mode="In" Type="String" />
+            <Parameter Name="NumBerDate" Mode="In" Type="String" />
+            <Parameter Name="TaiLieuDinhKem" Mode="In" Type="String" />
+            <Parameter Name="Createdate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteTheoDoiVanBan">
+          <Parameter Name="Id" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="EditTheoDoiVanBan">
+            <Parameter Name="Id" Mode="In" Type="Guid" />
+            <Parameter Name="CanBoThuLy" Mode="In" Type="String" />
+            <Parameter Name="CommentGD" Mode="In" Type="String" />
+            <Parameter Name="PGDPhuTrach" Mode="In" Type="String" />
+            <Parameter Name="IdDonViChucNang" Mode="In" Type="Guid" />
+            <Parameter Name="IdLanhDaoPhuTrach" Mode="In" Type="Guid" />
+            <Parameter Name="TienDoCongViec" Mode="In" Type="String" />
+            <Parameter Name="NumBerDate" Mode="In" Type="String" />
+            <Parameter Name="TaiLieuDinhKem" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetOneTheoDoiVanBanDen" ReturnType="Collection(QuanLyCongViecModel.GetOneTheoDoiVanBanDen_Result)">
+          <Parameter Name="Id" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="GetAllTheoDoiVanBan" ReturnType="Collection(QuanLyCongViecModel.GetAllTheoDoiVanBan_Result)">
+          <Parameter Name="IdGDVanBanDen" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="GetAllTheoDoiVanBan1" ReturnType="Collection(QuanLyCongViecModel.GetAllTheoDoiVanBan1_Result)" />
+          <FunctionImport Name="GetAllLinhVucBanHanh" ReturnType="Collection(QuanLyCongViecModel.GetAllLinhVucBanHanh_Result)" />
+          <EntitySet Name="TheoDoiVanBan" EntityType="QuanLyCongViecModel.TheoDoiVanBan" />
+          <EntitySet Name="ViewTheoDoiVanBan" EntityType="QuanLyCongViecModel.ViewTheoDoiVanBan" />
+          <FunctionImport Name="GetAllLanhDaoDonvi" ReturnType="Collection(QuanLyCongViecModel.GetAllLanhDaoDonvi_Result)" />
+          <FunctionImport Name="GetOneLanhDaoDonVi" ReturnType="Collection(QuanLyCongViecModel.GetOneLanhDaoDonVi_Result)">
+          <Parameter Name="Id" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="GetAllLoaiVanBan" ReturnType="Collection(QuanLyCongViecModel.GetAllLoaiVanBan_Result)" />
+          <FunctionImport Name="CheckExistVanBanDen" ReturnType="Collection(Guid)">
+            <Parameter Name="SoVanBan" Mode="In" Type="String" />
+            <Parameter Name="DateNgayPhatHanh" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <EntitySet Name="GDVanBanDen" EntityType="QuanLyCongViecModel.GDVanBanDen" />
+          <AssociationSet Name="FK_TheoDoiVanBan_GDVanBanDen" Association="QuanLyCongViecModel.FK_TheoDoiVanBan_GDVanBanDen">
+            <End Role="GDVanBanDen" EntitySet="GDVanBanDen" />
+            <End Role="TheoDoiVanBan" EntitySet="TheoDoiVanBan" />
+          </AssociationSet>
+          <FunctionImport Name="AddGDVanBanDen">
+            <Parameter Name="Id" Mode="In" Type="Guid" />
+            <Parameter Name="DateNgayNhan" Mode="In" Type="DateTime" />
+            <Parameter Name="IdCoQuanBanHanhVanBan" Mode="In" Type="Guid" />
+            <Parameter Name="IdLoaiVanBan" Mode="In" Type="Guid" />
+            <Parameter Name="IdLinhVucBanHanh" Mode="In" Type="Guid" />
+            <Parameter Name="SoVanBan" Mode="In" Type="String" />
+            <Parameter Name="DateNgayPhatHanh" Mode="In" Type="DateTime" />
+            <Parameter Name="TrichYeuVanBan" Mode="In" Type="String" />
+            <Parameter Name="CommentGD" Mode="In" Type="String" />
+            <Parameter Name="NumberSoCongVan" Mode="In" Type="String" />
+            <Parameter Name="IDDonViChuTri" Mode="In" Type="Guid" />
+            <Parameter Name="IDDonVIPhoiHop" Mode="In" Type="Guid" />
+            <Parameter Name="DateNgayChiDao" Mode="In" Type="DateTime" />
+            <Parameter Name="DateNgayPhaiHoanThanh" Mode="In" Type="DateTime" />
+            <Parameter Name="PhaiBaoCao" Mode="In" Type="Boolean" />
+            <Parameter Name="NguoiNhanVanBan" Mode="In" Type="String" />
+            <Parameter Name="DateChuyenVanBanToiDonVi" Mode="In" Type="DateTime" />
+            <Parameter Name="HoanThanh" Mode="In" Type="String" />
+            <Parameter Name="ChuaHoanThanh" Mode="In" Type="String" />
+            <Parameter Name="DangThucHien" Mode="In" Type="String" />
+            <Parameter Name="ChuaThucHien" Mode="In" Type="String" />
+            <Parameter Name="ThucHienCham" Mode="In" Type="String" />
+            <Parameter Name="KetThucCongViec" Mode="In" Type="String" />
+            <Parameter Name="TomTatKetQua" Mode="In" Type="String" />
+            <Parameter Name="Patition" Mode="In" Type="String" />
+            <Parameter Name="TaiLIeuDinhKem" Mode="In" Type="String" />
+            <Parameter Name="IdCanBoNhap" Mode="In" Type="Guid" />
+            <Parameter Name="DateHoanThanh" Mode="In" Type="DateTime" />
+            <Parameter Name="CreateDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteGDVanBanDen">
+          <Parameter Name="Id" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="EditGDVanBanDen">
+            <Parameter Name="Id" Mode="In" Type="Guid" />
+            <Parameter Name="DateNgayNhan" Mode="In" Type="DateTime" />
+            <Parameter Name="IdCoQuanBanHanhVanBan" Mode="In" Type="Guid" />
+            <Parameter Name="IdLoaiVanBan" Mode="In" Type="Guid" />
+            <Parameter Name="IdLinhVucBanHanh" Mode="In" Type="Guid" />
+            <Parameter Name="SoVanBan" Mode="In" Type="String" />
+            <Parameter Name="DateNgayPhatHanh" Mode="In" Type="DateTime" />
+            <Parameter Name="TrichYeuVanBan" Mode="In" Type="String" />
+            <Parameter Name="CommentGD" Mode="In" Type="String" />
+            <Parameter Name="NumberSoCongVan" Mode="In" Type="String" />
+            <Parameter Name="IDDonViChuTri" Mode="In" Type="Guid" />
+            <Parameter Name="IDDonVIPhoiHop" Mode="In" Type="Guid" />
+            <Parameter Name="DateNgayChiDao" Mode="In" Type="DateTime" />
+            <Parameter Name="DateNgayPhaiHoanThanh" Mode="In" Type="DateTime" />
+            <Parameter Name="PhaiBaoCao" Mode="In" Type="Boolean" />
+            <Parameter Name="NguoiNhanVanBan" Mode="In" Type="String" />
+            <Parameter Name="DateChuyenVanBanToiDonVi" Mode="In" Type="DateTime" />
+            <Parameter Name="HoanThanh" Mode="In" Type="String" />
+            <Parameter Name="ChuaHoanThanh" Mode="In" Type="String" />
+            <Parameter Name="DangThucHien" Mode="In" Type="String" />
+            <Parameter Name="ChuaThucHien" Mode="In" Type="String" />
+            <Parameter Name="ThucHienCham" Mode="In" Type="String" />
+            <Parameter Name="KetThucCongViec" Mode="In" Type="String" />
+            <Parameter Name="TomTatKetQua" Mode="In" Type="String" />
+            <Parameter Name="Patition" Mode="In" Type="String" />
+            <Parameter Name="TaiLIeuDinhKem" Mode="In" Type="String" />
+            <Parameter Name="DateHoanThanh" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="GetOneGDVanBanDen" ReturnType="Collection(QuanLyCongViecModel.GetOneGDVanBanDen_Result)">
+          <Parameter Name="Id" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="GetAllViewDonViVaCoQuan" />
+          <EntitySet Name="CoQuanBanHanhVanBan" EntityType="QuanLyCongViecModel.CoQuanBanHanhVanBan" />
+          <EntitySet Name="DonVi" EntityType="QuanLyCongViecModel.DonVi" />
+          <AssociationSet Name="FK_CanBoNhap_DonVi" Association="QuanLyCongViecModel.FK_CanBoNhap_DonVi">
+            <End Role="DonVi" EntitySet="DonVi" />
+            <End Role="CanBo" EntitySet="CanBo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LanhDaoDonVi_DonVi" Association="QuanLyCongViecModel.FK_LanhDaoDonVi_DonVi">
+            <End Role="DonVi" EntitySet="DonVi" />
+            <End Role="LanhDaoDonVi" EntitySet="LanhDaoDonVi" />
+          </AssociationSet>
+          <FunctionImport Name="AddCoQuanBanHanhVanBan">
+            <Parameter Name="Id" Mode="In" Type="Guid" />
+            <Parameter Name="TenCoQuan" Mode="In" Type="String" />
+            <Parameter Name="KyHieu" Mode="In" Type="String" />
+            <Parameter Name="InOrOut" Mode="In" Type="Boolean" />
+            <Parameter Name="Printname" Mode="In" Type="String" />
+            <Parameter Name="Createdate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteCoQuanBanHanhVanBan">
+          <Parameter Name="Id" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="EditCoQuanBanHanhVanBan">
+            <Parameter Name="Id" Mode="In" Type="Guid" />
+            <Parameter Name="TenCoQuan" Mode="In" Type="String" />
+            <Parameter Name="KyHieu" Mode="In" Type="String" />
+            <Parameter Name="InOrOut" Mode="In" Type="Boolean" />
+            <Parameter Name="PrintName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAllCoQuanBanhanhVanBan" ReturnType="Collection(QuanLyCongViecModel.GetAllCoQuanBanhanhVanBan_Result)" />
+          <FunctionImport Name="GetOneCoQuanbanHanhVanBan" ReturnType="Collection(QuanLyCongViecModel.GetOneCoQuanbanHanhVanBan_Result)">
+          <Parameter Name="Id" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="AddDonVi">
+            <Parameter Name="Id" Mode="In" Type="Guid" />
+            <Parameter Name="TenDonVi" Mode="In" Type="String" />
+            <Parameter Name="MaDonVi" Mode="In" Type="String" />
+            <Parameter Name="InOrOut" Mode="In" Type="Boolean" />
+            <Parameter Name="PrintName" Mode="In" Type="String" />
+            <Parameter Name="Createdate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteDonVi">
+          <Parameter Name="Id" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="EditDonVi">
+            <Parameter Name="Id" Mode="In" Type="Guid" />
+            <Parameter Name="TenDonVi" Mode="In" Type="String" />
+            <Parameter Name="MaDonVi" Mode="In" Type="String" />
+            <Parameter Name="InOrOut" Mode="In" Type="Boolean" />
+            <Parameter Name="PrintName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAllDonvi" ReturnType="Collection(QuanLyCongViecModel.GetAllDonvi_Result)" />
+          <FunctionImport Name="GetOneDonVi" ReturnType="Collection(QuanLyCongViecModel.GetOneDonVi_Result)">
+          <Parameter Name="Id" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <EntitySet Name="ViewDonViVaCoQuan" EntityType="QuanLyCongViecModel.ViewDonViVaCoQuan" />
+          <FunctionImport Name="GetAllCoQuanVaDonVi" ReturnType="Collection(QuanLyCongViecModel.GetAllCoQuanVaDonVi_Result)" />
+          <EntitySet Name="ViewGDKyBanHanh" EntityType="QuanLyCongViecModel.ViewGDKyBanHanh" />
+          <FunctionImport Name="GetAllGDKyBanHanh" ReturnType="Collection(QuanLyCongViecModel.GetAllGDKyBanHanh_Result)" />
+          <FunctionImport Name="ViewGDVanBanDenGDNoComment" ReturnType="Collection(QuanLyCongViecModel.ViewGDVanBanDenGDNoComment_Result)" />
+          <FunctionImport Name="ViewGDVanBanDenHetHan" ReturnType="Collection(QuanLyCongViecModel.ViewGDVanBanDenHetHan_Result)" />
+          <FunctionImport Name="ViewGDVanBanDenSapHetHan" ReturnType="Collection(QuanLyCongViecModel.ViewGDVanBanDenSapHetHan_Result)" />
+          <EntitySet Name="ViewGDVanBanDen" EntityType="QuanLyCongViecModel.ViewGDVanBanDen" />
+          <FunctionImport Name="GetAllGDVanBanDen" ReturnType="Collection(QuanLyCongViecModel.GetAllGDVanBanDen_Result)" />
+          <FunctionImport Name="ExportVanBan" ReturnType="Collection(QuanLyCongViecModel.ExportVanBan_Result)">
+            <Parameter Name="Id" Mode="In" Type="Guid" />
+            <Parameter Name="DateTuNgay" Mode="In" Type="DateTime" />
+            <Parameter Name="DateDenNgay" Mode="In" Type="DateTime" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="GetAllCanBo_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="SoHieuCAND" Nullable="true" MaxLength="50" />
+          <Property Type="Guid" Name="IdDonvi" Nullable="true" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="Actived" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetDonViSearch_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="MaDonVi" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TenDonVi" Nullable="false" MaxLength="150" />
+        </ComplexType>
+        <ComplexType Name="GetOneGDKyBanHanh_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="IdLinhVucBanHanh" Nullable="false" />
+          <Property Type="Guid" Name="IdLoaiVanBan" Nullable="false" />
+          <Property Type="Guid" Name="IdDonViThamMuu" Nullable="false" />
+          <Property Type="Guid" Name="IdLanhDaoPhuTrach" Nullable="true" />
+          <Property Type="String" Name="CanBoThamMuu" Nullable="true" MaxLength="150" />
+          <Property Type="DateTime" Name="DateTrinhVanBan" Nullable="true" />
+          <Property Type="DateTime" Name="DateKyVanBan" Nullable="true" />
+          <Property Type="String" Name="NumberVanBan" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="DateVanBan" Nullable="true" />
+          <Property Type="String" Name="TrichYeuVanBan" Nullable="true" />
+          <Property Type="String" Name="Partitons" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="TaiLieuDinhKem" Nullable="true" />
+          <Property Type="Guid" Name="IdCanBoNhap" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="GetOneLinhVucBanHanh_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="CodeLinhVuc" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NameLinhVuc" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="GetOneLoaiVanBan_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="CodeVanBan" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NameVanBan" Nullable="false" />
+          <Property Type="DateTime" Name="Createdate" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="searchlanhdaodonvi_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="TenLanhDao" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="ChucVu" Nullable="false" MaxLength="150" />
+          <Property Type="Guid" Name="IdDonVi" Nullable="false" />
+          <Property Type="DateTime" Name="Createdate" Nullable="false" Precision="23" />
+          <Property Type="Boolean" Name="Actived" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="CanBoTheoDoiVanBan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="IdTheoDoiVanBan" Type="Guid" />
+          <Property Name="IdCanBo" Type="Guid" />
+          <Property Name="DateNgayNhan" Type="DateTime" Precision="0" />
+          <Property Name="DateNgayXong" Type="DateTime" Precision="0" />
+          <Property Name="newcolumn" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="GetOneTheoDoiVanBanDen_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="IdGDVanBanDen" Nullable="false" />
+          <Property Type="String" Name="CanBoThuLy" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="CommentGD" Nullable="true" />
+          <Property Type="String" Name="PGDPhuTrach" Nullable="true" MaxLength="150" />
+          <Property Type="Guid" Name="IdDonViChucNang" Nullable="true" />
+          <Property Type="Guid" Name="IdLanhDaoPhuTrach" Nullable="true" />
+          <Property Type="String" Name="TienDoCongViec" Nullable="true" />
+          <Property Type="String" Name="NumberDate" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="TaiLieuDinhKem" Nullable="true" />
+          <Property Type="DateTime" Name="Createdate" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="GetAllTheoDoiVanBan_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="IdGDVanBanDen" Nullable="false" />
+          <Property Type="String" Name="PGDPhuTrach" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="CanBoThuLy" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="NumberDate" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="TaiLieuDinhKem" Nullable="true" />
+          <Property Type="String" Name="TenDonVi" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="TenLanhDao" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="CommentGD" Nullable="true" />
+          <Property Type="DateTime" Name="Createdate" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="GetAllTheoDoiVanBan1_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="IdGDVanBanDen" Nullable="false" />
+          <Property Type="String" Name="PGDPhuTrach" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="CanBoThuLy" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="NumberDate" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="TaiLieuDinhKem" Nullable="true" />
+          <Property Type="String" Name="TenDonVi" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="TenLanhDao" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="CommentGD" Nullable="true" />
+          <Property Type="DateTime" Name="Createdate" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="GetAllLinhVucBanHanh_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="CodeLinhVuc" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NameLinhVuc" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="23" />
+        </ComplexType>
+        <EntityType Name="TheoDoiVanBan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="IdGDVanBanDen" Type="Guid" />
+          <Property Name="CanBoThuLy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CommentGD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PGDPhuTrach" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="IdDonViChucNang" Type="Guid" />
+          <Property Name="IdLanhDaoPhuTrach" Type="Guid" />
+          <Property Name="TienDoCongViec" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NumberDate" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="TaiLieuDinhKem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Createdate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="GDVanBanDen" Relationship="QuanLyCongViecModel.FK_TheoDoiVanBan_GDVanBanDen" FromRole="TheoDoiVanBan" ToRole="GDVanBanDen" />
+        </EntityType>
+        <EntityType Name="ViewTheoDoiVanBan">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdGDVanBanDen" />
+            <PropertyRef Name="TenDonVi" />
+            <PropertyRef Name="TenLanhDao" />
+            <PropertyRef Name="Createdate" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="IdGDVanBanDen" Type="Guid" Nullable="false" />
+          <Property Name="PGDPhuTrach" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CanBoThuLy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="NumberDate" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="TaiLieuDinhKem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TenDonVi" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="TenLanhDao" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CommentGD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Createdate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <ComplexType Name="GetAllLanhDaoDonvi_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="MaDonVi" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TenDonVi" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="TenLanhDao" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="ChucVu" Nullable="false" MaxLength="150" />
+          <Property Type="Boolean" Name="Actived" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetOneLanhDaoDonVi_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="IdDonVi" Nullable="false" />
+          <Property Type="String" Name="MaDonVi" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TenDonVi" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="TenLanhDao" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="ChucVu" Nullable="false" MaxLength="150" />
+          <Property Type="Boolean" Name="Actived" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetAllLoaiVanBan_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="CodeVanBan" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NameVanBan" Nullable="false" />
+          <Property Type="DateTime" Name="Createdate" Nullable="false" Precision="23" />
+        </ComplexType>
+        <EntityType Name="GDVanBanDen">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="DateNgayNhan" Type="DateTime" Precision="0" />
+          <Property Name="IdCoQuanBanHanhVanBan" Type="Guid" />
+          <Property Name="IdLoaiVanBan" Type="Guid" />
+          <Property Name="IdLinhVucBanHanh" Type="Guid" />
+          <Property Name="SoVanBan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateNgayPhatHanh" Type="DateTime" Precision="0" />
+          <Property Name="TrichYeuVanBan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CommentGD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NumberSoCongVan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDDonViChuTri" Type="Guid" />
+          <Property Name="IDDonVIPhoiHop" Type="Guid" />
+          <Property Name="DateNgayChiDao" Type="DateTime" Precision="0" />
+          <Property Name="DateNgayPhaiHoanThanh" Type="DateTime" Precision="0" />
+          <Property Name="PhaiBaoCao" Type="Boolean" />
+          <Property Name="NguoiNhanVanBan" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DateChuyenVanBanToiDonVi" Type="DateTime" Precision="0" />
+          <Property Name="HoanThanh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ChuaHoanThanh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DangThucHien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ChuaThucHien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ThucHienCham" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KetThucCongViec" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TomTatKetQua" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Patition" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TaiLIeuDinhKem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IdCanBoNhap" Type="Guid" />
+          <Property Name="DateHoanThanh" Type="DateTime" Precision="0" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TheoDoiVanBan" Relationship="QuanLyCongViecModel.FK_TheoDoiVanBan_GDVanBanDen" FromRole="GDVanBanDen" ToRole="TheoDoiVanBan" />
+        </EntityType>
+        <Association Name="FK_TheoDoiVanBan_GDVanBanDen">
+          <End Type="QuanLyCongViecModel.GDVanBanDen" Role="GDVanBanDen" Multiplicity="0..1" />
+          <End Type="QuanLyCongViecModel.TheoDoiVanBan" Role="TheoDoiVanBan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GDVanBanDen">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TheoDoiVanBan">
+              <PropertyRef Name="IdGDVanBanDen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="GetOneGDVanBanDen_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="DateTime" Name="DateNgayNhan" Nullable="true" />
+          <Property Type="Guid" Name="IdCoQuanBanHanhVanBan" Nullable="true" />
+          <Property Type="Guid" Name="IdLoaiVanBan" Nullable="true" />
+          <Property Type="Guid" Name="IdLinhVucBanHanh" Nullable="true" />
+          <Property Type="String" Name="SoVanBan" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="DateNgayPhatHanh" Nullable="true" />
+          <Property Type="String" Name="TrichYeuVanBan" Nullable="true" />
+          <Property Type="String" Name="CommentGD" Nullable="true" />
+          <Property Type="String" Name="NumberSoCongVan" Nullable="true" MaxLength="50" />
+          <Property Type="Guid" Name="IDDonViChuTri" Nullable="true" />
+          <Property Type="Guid" Name="IDDonVIPhoiHop" Nullable="true" />
+          <Property Type="DateTime" Name="DateNgayChiDao" Nullable="true" />
+          <Property Type="DateTime" Name="DateNgayPhaiHoanThanh" Nullable="true" />
+          <Property Type="Boolean" Name="PhaiBaoCao" Nullable="true" />
+          <Property Type="String" Name="NguoiNhanVanBan" Nullable="true" MaxLength="150" />
+          <Property Type="DateTime" Name="DateChuyenVanBanToiDonVi" Nullable="true" />
+          <Property Type="String" Name="HoanThanh" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ChuaHoanThanh" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DangThucHien" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ChuaThucHien" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ThucHienCham" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="KetThucCongViec" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TomTatKetQua" Nullable="true" />
+          <Property Type="String" Name="Patition" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TaiLIeuDinhKem" Nullable="true" />
+          <Property Type="Guid" Name="IdCanBoNhap" Nullable="true" />
+          <Property Type="DateTime" Name="DateHoanThanh" Nullable="true" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <EntityType Name="CoQuanBanHanhVanBan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="InOrOut" Type="Boolean" />
+          <Property Name="KyHieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TenCoQuan" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="PrintName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DonVi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="InOrOut" Type="Boolean" />
+          <Property Name="MaDonVi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TenDonVi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PrintName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Createdate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="CanBo" Relationship="QuanLyCongViecModel.FK_CanBoNhap_DonVi" FromRole="DonVi" ToRole="CanBo" />
+          <NavigationProperty Name="LanhDaoDonVi" Relationship="QuanLyCongViecModel.FK_LanhDaoDonVi_DonVi" FromRole="DonVi" ToRole="LanhDaoDonVi" />
+        </EntityType>
+        <Association Name="FK_CanBoNhap_DonVi">
+          <End Type="QuanLyCongViecModel.DonVi" Role="DonVi" Multiplicity="0..1" />
+          <End Type="QuanLyCongViecModel.CanBo" Role="CanBo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DonVi">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CanBo">
+              <PropertyRef Name="IdDonvi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LanhDaoDonVi_DonVi">
+          <End Type="QuanLyCongViecModel.DonVi" Role="DonVi" Multiplicity="1" />
+          <End Type="QuanLyCongViecModel.LanhDaoDonVi" Role="LanhDaoDonVi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DonVi">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LanhDaoDonVi">
+              <PropertyRef Name="IdDonVi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="GetAllCoQuanBanhanhVanBan_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="InOrOut" Nullable="true" />
+          <Property Type="String" Name="KyHieu" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TenCoQuan" Nullable="true" MaxLength="150" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="PrintName" Nullable="true" MaxLength="150" />
+        </ComplexType>
+        <ComplexType Name="GetOneCoQuanbanHanhVanBan_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="InOrOut" Nullable="true" />
+          <Property Type="String" Name="KyHieu" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TenCoQuan" Nullable="true" MaxLength="150" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="PrintName" Nullable="true" MaxLength="150" />
+        </ComplexType>
+        <ComplexType Name="GetAllDonvi_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="InOrOut" Nullable="true" />
+          <Property Type="String" Name="MaDonVi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TenDonVi" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="PrintName" Nullable="true" MaxLength="150" />
+          <Property Type="DateTime" Name="Createdate" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="GetOneDonVi_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="InOrOut" Nullable="true" />
+          <Property Type="String" Name="MaDonVi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TenDonVi" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="PrintName" Nullable="true" MaxLength="150" />
+          <Property Type="DateTime" Name="Createdate" Nullable="false" Precision="23" />
+        </ComplexType>
+        <EntityType Name="ViewDonViVaCoQuan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="InOrOut" Type="Boolean" />
+          <Property Name="KyHieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TenCoQuan" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PrintName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <ComplexType Name="GetAllCoQuanVaDonVi_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="InOrOut" Nullable="true" />
+          <Property Type="String" Name="KyHieu" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TenCoQuan" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="PrintName" Nullable="true" MaxLength="150" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <EntityType Name="ViewGDKyBanHanh">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdCanBoNhap" />
+            <PropertyRef Name="CreateDate" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="NameLinhVuc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NameVanBan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TenDonVi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="TenLanhDao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CanBoThamMuu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DateTrinhVanBan" Type="DateTime" Precision="0" />
+          <Property Name="DateKyVanBan" Type="DateTime" Precision="0" />
+          <Property Name="NumberVanBan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateVanBan" Type="DateTime" Precision="0" />
+          <Property Name="TrichYeuVanBan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TaiLieuDinhKem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IdCanBoNhap" Type="Guid" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <ComplexType Name="GetAllGDKyBanHanh_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="NameLinhVuc" Nullable="true" />
+          <Property Type="String" Name="NameVanBan" Nullable="true" />
+          <Property Type="String" Name="TenDonVi" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="TenLanhDao" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="CanBoThamMuu" Nullable="true" MaxLength="150" />
+          <Property Type="DateTime" Name="DateTrinhVanBan" Nullable="true" />
+          <Property Type="DateTime" Name="DateKyVanBan" Nullable="true" />
+          <Property Type="String" Name="NumberVanBan" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="DateVanBan" Nullable="true" />
+          <Property Type="String" Name="TrichYeuVanBan" Nullable="true" />
+          <Property Type="String" Name="TaiLieuDinhKem" Nullable="true" />
+          <Property Type="Guid" Name="IdCanBoNhap" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="ViewGDVanBanDenGDNoComment_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="DateTime" Name="DateNgayNhan" Nullable="true" />
+          <Property Type="String" Name="KyHieu" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TenCoQuan" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="NameVanBan" Nullable="true" />
+          <Property Type="String" Name="SoVanBan" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="DateNgayPhatHanh" Nullable="true" />
+          <Property Type="String" Name="NameLinhVuc" Nullable="true" />
+          <Property Type="String" Name="TrichYeuVanBan" Nullable="true" />
+          <Property Type="String" Name="CommentGD" Nullable="true" />
+          <Property Type="String" Name="NumberSoCongVan" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TenDonVi1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TenDonVi2" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="DateNgayChiDao" Nullable="true" />
+          <Property Type="DateTime" Name="DateNgayPhaiHoanThanh" Nullable="true" />
+          <Property Type="Boolean" Name="PhaiBaoCao" Nullable="true" />
+          <Property Type="String" Name="NguoiNhanVanBan" Nullable="true" MaxLength="150" />
+          <Property Type="DateTime" Name="DateChuyenVanBanToiDonVi" Nullable="true" />
+          <Property Type="String" Name="TienDoCongViec" Nullable="false" MaxLength="304" />
+          <Property Type="String" Name="HoanThanh" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TomTatKetQua" Nullable="true" />
+          <Property Type="String" Name="tailieu" Nullable="true" />
+          <Property Type="DateTime" Name="DateHoanThanh" Nullable="true" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="ViewGDVanBanDenHetHan_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="DateTime" Name="DateNgayNhan" Nullable="true" />
+          <Property Type="String" Name="KyHieu" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TenCoQuan" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="NameVanBan" Nullable="true" />
+          <Property Type="String" Name="SoVanBan" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="DateNgayPhatHanh" Nullable="true" />
+          <Property Type="String" Name="NameLinhVuc" Nullable="true" />
+          <Property Type="String" Name="TrichYeuVanBan" Nullable="true" />
+          <Property Type="String" Name="CommentGD" Nullable="true" />
+          <Property Type="String" Name="NumberSoCongVan" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TenDonVi1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TenDonVi2" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="DateNgayChiDao" Nullable="true" />
+          <Property Type="DateTime" Name="DateNgayPhaiHoanThanh" Nullable="true" />
+          <Property Type="Boolean" Name="PhaiBaoCao" Nullable="true" />
+          <Property Type="String" Name="NguoiNhanVanBan" Nullable="true" MaxLength="150" />
+          <Property Type="DateTime" Name="DateChuyenVanBanToiDonVi" Nullable="true" />
+          <Property Type="String" Name="TienDoCongViec" Nullable="false" MaxLength="304" />
+          <Property Type="String" Name="HoanThanh" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TomTatKetQua" Nullable="true" />
+          <Property Type="String" Name="tailieu" Nullable="true" />
+          <Property Type="DateTime" Name="DateHoanThanh" Nullable="true" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="ViewGDVanBanDenSapHetHan_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="DateTime" Name="DateNgayNhan" Nullable="true" />
+          <Property Type="String" Name="KyHieu" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TenCoQuan" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="NameVanBan" Nullable="true" />
+          <Property Type="String" Name="SoVanBan" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="DateNgayPhatHanh" Nullable="true" />
+          <Property Type="String" Name="NameLinhVuc" Nullable="true" />
+          <Property Type="String" Name="TrichYeuVanBan" Nullable="true" />
+          <Property Type="String" Name="CommentGD" Nullable="true" />
+          <Property Type="String" Name="NumberSoCongVan" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TenDonVi1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TenDonVi2" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="DateNgayChiDao" Nullable="true" />
+          <Property Type="DateTime" Name="DateNgayPhaiHoanThanh" Nullable="true" />
+          <Property Type="Boolean" Name="PhaiBaoCao" Nullable="true" />
+          <Property Type="String" Name="NguoiNhanVanBan" Nullable="true" MaxLength="150" />
+          <Property Type="DateTime" Name="DateChuyenVanBanToiDonVi" Nullable="true" />
+          <Property Type="String" Name="TienDoCongViec" Nullable="false" MaxLength="304" />
+          <Property Type="String" Name="HoanThanh" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TomTatKetQua" Nullable="true" />
+          <Property Type="String" Name="tailieu" Nullable="true" />
+          <Property Type="DateTime" Name="DateHoanThanh" Nullable="true" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <EntityType Name="ViewGDVanBanDen">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="TienDoCongViec" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="DateNgayNhan" Type="DateTime" Precision="0" />
+          <Property Name="KyHieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TenCoQuan" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="NameVanBan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SoVanBan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateNgayPhatHanh" Type="DateTime" Precision="0" />
+          <Property Name="NameLinhVuc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TrichYeuVanBan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CommentGD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NumberSoCongVan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TenDonVi1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TenDonVi2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateNgayChiDao" Type="DateTime" Precision="0" />
+          <Property Name="DateNgayPhaiHoanThanh" Type="DateTime" Precision="0" />
+          <Property Name="PhaiBaoCao" Type="Boolean" />
+          <Property Name="NguoiNhanVanBan" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DateChuyenVanBanToiDonVi" Type="DateTime" Precision="0" />
+          <Property Name="TienDoCongViec" Type="String" Nullable="false" MaxLength="304" FixedLength="false" Unicode="true" />
+          <Property Name="HoanThanh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TomTatKetQua" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="tailieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateHoanThanh" Type="DateTime" Precision="0" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <ComplexType Name="GetAllGDVanBanDen_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="DateTime" Name="DateNgayNhan" Nullable="true" />
+          <Property Type="String" Name="KyHieu" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TenCoQuan" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="NameVanBan" Nullable="true" />
+          <Property Type="String" Name="SoVanBan" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="DateNgayPhatHanh" Nullable="true" />
+          <Property Type="String" Name="NameLinhVuc" Nullable="true" />
+          <Property Type="String" Name="TrichYeuVanBan" Nullable="true" />
+          <Property Type="String" Name="CommentGD" Nullable="true" />
+          <Property Type="String" Name="NumberSoCongVan" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TenDonVi1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TenDonVi2" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="DateNgayChiDao" Nullable="true" />
+          <Property Type="DateTime" Name="DateNgayPhaiHoanThanh" Nullable="true" />
+          <Property Type="Boolean" Name="PhaiBaoCao" Nullable="true" />
+          <Property Type="String" Name="NguoiNhanVanBan" Nullable="true" MaxLength="150" />
+          <Property Type="DateTime" Name="DateChuyenVanBanToiDonVi" Nullable="true" />
+          <Property Type="String" Name="TienDoCongViec" Nullable="false" MaxLength="304" />
+          <Property Type="String" Name="HoanThanh" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TomTatKetQua" Nullable="true" />
+          <Property Type="String" Name="tailieu" Nullable="true" />
+          <Property Type="DateTime" Name="DateHoanThanh" Nullable="true" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="ExportVanBan_Result">
+          <Property Type="String" Name="NumberSoCongVan" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TenCoQuan" Nullable="true" MaxLength="150" />
+          <Property Type="Boolean" Name="InOrOut" Nullable="true" />
+          <Property Type="String" Name="SoVanBan" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="DateNgayPhatHanh" Nullable="true" />
+          <Property Type="String" Name="TrichYeuVanBan" Nullable="true" />
+          <Property Type="String" Name="CommentGD" Nullable="true" />
+          <Property Type="String" Name="daumoinhanvb" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="NguoiNhanVanBan" Nullable="true" MaxLength="150" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QuanLyCongViecModelStoreContainer" CdmEntityContainer="QuanLyCongViecEntities">
+          <EntitySetMapping Name="CanBo">
+            <EntityTypeMapping TypeName="QuanLyCongViecModel.CanBo">
+              <MappingFragment StoreEntitySet="CanBo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SoHieuCAND" ColumnName="SoHieuCAND" />
+                <ScalarProperty Name="IdDonvi" ColumnName="IdDonvi" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Actived" ColumnName="Actived" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GDKyBanHanh">
+            <EntityTypeMapping TypeName="QuanLyCongViecModel.GDKyBanHanh">
+              <MappingFragment StoreEntitySet="GDKyBanHanh">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdLinhVucBanHanh" ColumnName="IdLinhVucBanHanh" />
+                <ScalarProperty Name="IdLoaiVanBan" ColumnName="IdLoaiVanBan" />
+                <ScalarProperty Name="IdDonViThamMuu" ColumnName="IdDonViThamMuu" />
+                <ScalarProperty Name="IdLanhDaoPhuTrach" ColumnName="IdLanhDaoPhuTrach" />
+                <ScalarProperty Name="CanBoThamMuu" ColumnName="CanBoThamMuu" />
+                <ScalarProperty Name="DateTrinhVanBan" ColumnName="DateTrinhVanBan" />
+                <ScalarProperty Name="DateKyVanBan" ColumnName="DateKyVanBan" />
+                <ScalarProperty Name="NumberVanBan" ColumnName="NumberVanBan" />
+                <ScalarProperty Name="DateVanBan" ColumnName="DateVanBan" />
+                <ScalarProperty Name="TrichYeuVanBan" ColumnName="TrichYeuVanBan" />
+                <ScalarProperty Name="Partitons" ColumnName="Partitons" />
+                <ScalarProperty Name="TaiLieuDinhKem" ColumnName="TaiLieuDinhKem" />
+                <ScalarProperty Name="IdCanBoNhap" ColumnName="IdCanBoNhap" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LanhDaoDonVi">
+            <EntityTypeMapping TypeName="QuanLyCongViecModel.LanhDaoDonVi">
+              <MappingFragment StoreEntitySet="LanhDaoDonVi">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TenLanhDao" ColumnName="TenLanhDao" />
+                <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+                <ScalarProperty Name="IdDonVi" ColumnName="IdDonVi" />
+                <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+                <ScalarProperty Name="Actived" ColumnName="Actived" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LinhVucBanHanh">
+            <EntityTypeMapping TypeName="QuanLyCongViecModel.LinhVucBanHanh">
+              <MappingFragment StoreEntitySet="LinhVucBanHanh">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CodeLinhVuc" ColumnName="CodeLinhVuc" />
+                <ScalarProperty Name="NameLinhVuc" ColumnName="NameLinhVuc" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoaiVanBan">
+            <EntityTypeMapping TypeName="QuanLyCongViecModel.LoaiVanBan">
+              <MappingFragment StoreEntitySet="LoaiVanBan">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CodeVanBan" ColumnName="CodeVanBan" />
+                <ScalarProperty Name="NameVanBan" ColumnName="NameVanBan" />
+                <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="AddGDKyBanHanh" FunctionName="QuanLyCongViecModel.Store.AddGDKyBanHanh" />
+          <FunctionImportMapping FunctionImportName="AddLanhDaoDonVi" FunctionName="QuanLyCongViecModel.Store.AddLanhDaoDonVi" />
+          <FunctionImportMapping FunctionImportName="AddLinhVucBanHanh" FunctionName="QuanLyCongViecModel.Store.AddLinhVucBanHanh" />
+          <FunctionImportMapping FunctionImportName="AddLoaiVanBan" FunctionName="QuanLyCongViecModel.Store.AddLoaiVanBan" />
+          <FunctionImportMapping FunctionImportName="DeleteGDKyBanHanh" FunctionName="QuanLyCongViecModel.Store.DeleteGDKyBanHanh" />
+          <FunctionImportMapping FunctionImportName="DeleteLanhDaoDonVi" FunctionName="QuanLyCongViecModel.Store.DeleteLanhDaoDonVi" />
+          <FunctionImportMapping FunctionImportName="DeleteLinhVucBanHanh" FunctionName="QuanLyCongViecModel.Store.DeleteLinhVucBanHanh" />
+          <FunctionImportMapping FunctionImportName="DeleteLoaiVanBan" FunctionName="QuanLyCongViecModel.Store.DeleteLoaiVanBan" />
+          <FunctionImportMapping FunctionImportName="EditGDKyBanHanh" FunctionName="QuanLyCongViecModel.Store.EditGDKyBanHanh" />
+          <FunctionImportMapping FunctionImportName="EditLanhDaoDonVi" FunctionName="QuanLyCongViecModel.Store.EditLanhDaoDonVi" />
+          <FunctionImportMapping FunctionImportName="EditLinhVucBanHanh" FunctionName="QuanLyCongViecModel.Store.EditLinhVucBanHanh" />
+          <FunctionImportMapping FunctionImportName="EditLoaiVanBan" FunctionName="QuanLyCongViecModel.Store.EditLoaiVanBan" />
+          <FunctionImportMapping FunctionImportName="GetAllCanBo" FunctionName="QuanLyCongViecModel.Store.GetAllCanBo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.GetAllCanBo_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SoHieuCAND" ColumnName="SoHieuCAND" />
+                <ScalarProperty Name="IdDonvi" ColumnName="IdDonvi" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Actived" ColumnName="Actived" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetDonViSearch" FunctionName="QuanLyCongViecModel.Store.GetDonViSearch">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.GetDonViSearch_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MaDonVi" ColumnName="MaDonVi" />
+                <ScalarProperty Name="TenDonVi" ColumnName="TenDonVi" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetOneGDKyBanHanh" FunctionName="QuanLyCongViecModel.Store.GetOneGDKyBanHanh">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.GetOneGDKyBanHanh_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdLinhVucBanHanh" ColumnName="IdLinhVucBanHanh" />
+                <ScalarProperty Name="IdLoaiVanBan" ColumnName="IdLoaiVanBan" />
+                <ScalarProperty Name="IdDonViThamMuu" ColumnName="IdDonViThamMuu" />
+                <ScalarProperty Name="IdLanhDaoPhuTrach" ColumnName="IdLanhDaoPhuTrach" />
+                <ScalarProperty Name="CanBoThamMuu" ColumnName="CanBoThamMuu" />
+                <ScalarProperty Name="DateTrinhVanBan" ColumnName="DateTrinhVanBan" />
+                <ScalarProperty Name="DateKyVanBan" ColumnName="DateKyVanBan" />
+                <ScalarProperty Name="NumberVanBan" ColumnName="NumberVanBan" />
+                <ScalarProperty Name="DateVanBan" ColumnName="DateVanBan" />
+                <ScalarProperty Name="TrichYeuVanBan" ColumnName="TrichYeuVanBan" />
+                <ScalarProperty Name="Partitons" ColumnName="Partitons" />
+                <ScalarProperty Name="TaiLieuDinhKem" ColumnName="TaiLieuDinhKem" />
+                <ScalarProperty Name="IdCanBoNhap" ColumnName="IdCanBoNhap" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetOneLinhVucBanHanh" FunctionName="QuanLyCongViecModel.Store.GetOneLinhVucBanHanh">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.GetOneLinhVucBanHanh_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CodeLinhVuc" ColumnName="CodeLinhVuc" />
+                <ScalarProperty Name="NameLinhVuc" ColumnName="NameLinhVuc" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetOneLoaiVanBan" FunctionName="QuanLyCongViecModel.Store.GetOneLoaiVanBan">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.GetOneLoaiVanBan_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CodeVanBan" ColumnName="CodeVanBan" />
+                <ScalarProperty Name="NameVanBan" ColumnName="NameVanBan" />
+                <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="searchlanhdaodonvi" FunctionName="QuanLyCongViecModel.Store.searchlanhdaodonvi">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.searchlanhdaodonvi_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TenLanhDao" ColumnName="TenLanhDao" />
+                <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+                <ScalarProperty Name="IdDonVi" ColumnName="IdDonVi" />
+                <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+                <ScalarProperty Name="Actived" ColumnName="Actived" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="CanBoTheoDoiVanBan">
+            <EntityTypeMapping TypeName="QuanLyCongViecModel.CanBoTheoDoiVanBan">
+              <MappingFragment StoreEntitySet="CanBoTheoDoiVanBan">
+                <ScalarProperty Name="newcolumn" ColumnName="newcolumn" />
+                <ScalarProperty Name="DateNgayXong" ColumnName="DateNgayXong" />
+                <ScalarProperty Name="DateNgayNhan" ColumnName="DateNgayNhan" />
+                <ScalarProperty Name="IdCanBo" ColumnName="IdCanBo" />
+                <ScalarProperty Name="IdTheoDoiVanBan" ColumnName="IdTheoDoiVanBan" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="AddTheoDoiVanBan" FunctionName="QuanLyCongViecModel.Store.AddTheoDoiVanBan" />
+          <FunctionImportMapping FunctionImportName="DeleteTheoDoiVanBan" FunctionName="QuanLyCongViecModel.Store.DeleteTheoDoiVanBan" />
+          <FunctionImportMapping FunctionImportName="EditTheoDoiVanBan" FunctionName="QuanLyCongViecModel.Store.EditTheoDoiVanBan" />
+          <FunctionImportMapping FunctionImportName="GetOneTheoDoiVanBanDen" FunctionName="QuanLyCongViecModel.Store.GetOneTheoDoiVanBanDen">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.GetOneTheoDoiVanBanDen_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdGDVanBanDen" ColumnName="IdGDVanBanDen" />
+                <ScalarProperty Name="CanBoThuLy" ColumnName="CanBoThuLy" />
+                <ScalarProperty Name="CommentGD" ColumnName="CommentGD" />
+                <ScalarProperty Name="PGDPhuTrach" ColumnName="PGDPhuTrach" />
+                <ScalarProperty Name="IdDonViChucNang" ColumnName="IdDonViChucNang" />
+                <ScalarProperty Name="IdLanhDaoPhuTrach" ColumnName="IdLanhDaoPhuTrach" />
+                <ScalarProperty Name="TienDoCongViec" ColumnName="TienDoCongViec" />
+                <ScalarProperty Name="NumberDate" ColumnName="NumberDate" />
+                <ScalarProperty Name="TaiLieuDinhKem" ColumnName="TaiLieuDinhKem" />
+                <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAllTheoDoiVanBan" FunctionName="QuanLyCongViecModel.Store.GetAllTheoDoiVanBan">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.GetAllTheoDoiVanBan_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdGDVanBanDen" ColumnName="IdGDVanBanDen" />
+                <ScalarProperty Name="PGDPhuTrach" ColumnName="PGDPhuTrach" />
+                <ScalarProperty Name="CanBoThuLy" ColumnName="CanBoThuLy" />
+                <ScalarProperty Name="NumberDate" ColumnName="NumberDate" />
+                <ScalarProperty Name="TaiLieuDinhKem" ColumnName="TaiLieuDinhKem" />
+                <ScalarProperty Name="TenDonVi" ColumnName="TenDonVi" />
+                <ScalarProperty Name="TenLanhDao" ColumnName="TenLanhDao" />
+                <ScalarProperty Name="CommentGD" ColumnName="CommentGD" />
+                <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAllTheoDoiVanBan1" FunctionName="QuanLyCongViecModel.Store.GetAllTheoDoiVanBan1">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.GetAllTheoDoiVanBan1_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdGDVanBanDen" ColumnName="IdGDVanBanDen" />
+                <ScalarProperty Name="PGDPhuTrach" ColumnName="PGDPhuTrach" />
+                <ScalarProperty Name="CanBoThuLy" ColumnName="CanBoThuLy" />
+                <ScalarProperty Name="NumberDate" ColumnName="NumberDate" />
+                <ScalarProperty Name="TaiLieuDinhKem" ColumnName="TaiLieuDinhKem" />
+                <ScalarProperty Name="TenDonVi" ColumnName="TenDonVi" />
+                <ScalarProperty Name="TenLanhDao" ColumnName="TenLanhDao" />
+                <ScalarProperty Name="CommentGD" ColumnName="CommentGD" />
+                <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAllLinhVucBanHanh" FunctionName="QuanLyCongViecModel.Store.GetAllLinhVucBanHanh">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.GetAllLinhVucBanHanh_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CodeLinhVuc" ColumnName="CodeLinhVuc" />
+                <ScalarProperty Name="NameLinhVuc" ColumnName="NameLinhVuc" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="TheoDoiVanBan">
+            <EntityTypeMapping TypeName="QuanLyCongViecModel.TheoDoiVanBan">
+              <MappingFragment StoreEntitySet="TheoDoiVanBan">
+                <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+                <ScalarProperty Name="TaiLieuDinhKem" ColumnName="TaiLieuDinhKem" />
+                <ScalarProperty Name="NumberDate" ColumnName="NumberDate" />
+                <ScalarProperty Name="TienDoCongViec" ColumnName="TienDoCongViec" />
+                <ScalarProperty Name="IdLanhDaoPhuTrach" ColumnName="IdLanhDaoPhuTrach" />
+                <ScalarProperty Name="IdDonViChucNang" ColumnName="IdDonViChucNang" />
+                <ScalarProperty Name="PGDPhuTrach" ColumnName="PGDPhuTrach" />
+                <ScalarProperty Name="CommentGD" ColumnName="CommentGD" />
+                <ScalarProperty Name="CanBoThuLy" ColumnName="CanBoThuLy" />
+                <ScalarProperty Name="IdGDVanBanDen" ColumnName="IdGDVanBanDen" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewTheoDoiVanBan">
+            <EntityTypeMapping TypeName="QuanLyCongViecModel.ViewTheoDoiVanBan">
+              <MappingFragment StoreEntitySet="ViewTheoDoiVanBan">
+                <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+                <ScalarProperty Name="CommentGD" ColumnName="CommentGD" />
+                <ScalarProperty Name="TenLanhDao" ColumnName="TenLanhDao" />
+                <ScalarProperty Name="TenDonVi" ColumnName="TenDonVi" />
+                <ScalarProperty Name="TaiLieuDinhKem" ColumnName="TaiLieuDinhKem" />
+                <ScalarProperty Name="NumberDate" ColumnName="NumberDate" />
+                <ScalarProperty Name="CanBoThuLy" ColumnName="CanBoThuLy" />
+                <ScalarProperty Name="PGDPhuTrach" ColumnName="PGDPhuTrach" />
+                <ScalarProperty Name="IdGDVanBanDen" ColumnName="IdGDVanBanDen" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetAllLanhDaoDonvi" FunctionName="QuanLyCongViecModel.Store.GetAllLanhDaoDonvi">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.GetAllLanhDaoDonvi_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MaDonVi" ColumnName="MaDonVi" />
+                <ScalarProperty Name="TenDonVi" ColumnName="TenDonVi" />
+                <ScalarProperty Name="TenLanhDao" ColumnName="TenLanhDao" />
+                <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+                <ScalarProperty Name="Actived" ColumnName="Actived" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetOneLanhDaoDonVi" FunctionName="QuanLyCongViecModel.Store.GetOneLanhDaoDonVi">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.GetOneLanhDaoDonVi_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdDonVi" ColumnName="IdDonVi" />
+                <ScalarProperty Name="MaDonVi" ColumnName="MaDonVi" />
+                <ScalarProperty Name="TenDonVi" ColumnName="TenDonVi" />
+                <ScalarProperty Name="TenLanhDao" ColumnName="TenLanhDao" />
+                <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+                <ScalarProperty Name="Actived" ColumnName="Actived" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAllLoaiVanBan" FunctionName="QuanLyCongViecModel.Store.GetAllLoaiVanBan">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.GetAllLoaiVanBan_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CodeVanBan" ColumnName="CodeVanBan" />
+                <ScalarProperty Name="NameVanBan" ColumnName="NameVanBan" />
+                <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CheckExistVanBanDen" FunctionName="QuanLyCongViecModel.Store.CheckExistVanBanDen" />
+          <EntitySetMapping Name="GDVanBanDen">
+            <EntityTypeMapping TypeName="QuanLyCongViecModel.GDVanBanDen">
+              <MappingFragment StoreEntitySet="GDVanBanDen">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="DateHoanThanh" ColumnName="DateHoanThanh" />
+                <ScalarProperty Name="IdCanBoNhap" ColumnName="IdCanBoNhap" />
+                <ScalarProperty Name="TaiLIeuDinhKem" ColumnName="TaiLIeuDinhKem" />
+                <ScalarProperty Name="Patition" ColumnName="Patition" />
+                <ScalarProperty Name="TomTatKetQua" ColumnName="TomTatKetQua" />
+                <ScalarProperty Name="KetThucCongViec" ColumnName="KetThucCongViec" />
+                <ScalarProperty Name="ThucHienCham" ColumnName="ThucHienCham" />
+                <ScalarProperty Name="ChuaThucHien" ColumnName="ChuaThucHien" />
+                <ScalarProperty Name="DangThucHien" ColumnName="DangThucHien" />
+                <ScalarProperty Name="ChuaHoanThanh" ColumnName="ChuaHoanThanh" />
+                <ScalarProperty Name="HoanThanh" ColumnName="HoanThanh" />
+                <ScalarProperty Name="DateChuyenVanBanToiDonVi" ColumnName="DateChuyenVanBanToiDonVi" />
+                <ScalarProperty Name="NguoiNhanVanBan" ColumnName="NguoiNhanVanBan" />
+                <ScalarProperty Name="PhaiBaoCao" ColumnName="PhaiBaoCao" />
+                <ScalarProperty Name="DateNgayPhaiHoanThanh" ColumnName="DateNgayPhaiHoanThanh" />
+                <ScalarProperty Name="DateNgayChiDao" ColumnName="DateNgayChiDao" />
+                <ScalarProperty Name="IDDonVIPhoiHop" ColumnName="IDDonVIPhoiHop" />
+                <ScalarProperty Name="IDDonViChuTri" ColumnName="IDDonViChuTri" />
+                <ScalarProperty Name="NumberSoCongVan" ColumnName="NumberSoCongVan" />
+                <ScalarProperty Name="CommentGD" ColumnName="CommentGD" />
+                <ScalarProperty Name="TrichYeuVanBan" ColumnName="TrichYeuVanBan" />
+                <ScalarProperty Name="DateNgayPhatHanh" ColumnName="DateNgayPhatHanh" />
+                <ScalarProperty Name="SoVanBan" ColumnName="SoVanBan" />
+                <ScalarProperty Name="IdLinhVucBanHanh" ColumnName="IdLinhVucBanHanh" />
+                <ScalarProperty Name="IdLoaiVanBan" ColumnName="IdLoaiVanBan" />
+                <ScalarProperty Name="IdCoQuanBanHanhVanBan" ColumnName="IdCoQuanBanHanhVanBan" />
+                <ScalarProperty Name="DateNgayNhan" ColumnName="DateNgayNhan" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="AddGDVanBanDen" FunctionName="QuanLyCongViecModel.Store.AddGDVanBanDen" />
+          <FunctionImportMapping FunctionImportName="DeleteGDVanBanDen" FunctionName="QuanLyCongViecModel.Store.DeleteGDVanBanDen" />
+          <FunctionImportMapping FunctionImportName="EditGDVanBanDen" FunctionName="QuanLyCongViecModel.Store.EditGDVanBanDen" />
+          <FunctionImportMapping FunctionImportName="GetOneGDVanBanDen" FunctionName="QuanLyCongViecModel.Store.GetOneGDVanBanDen">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.GetOneGDVanBanDen_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DateNgayNhan" ColumnName="DateNgayNhan" />
+                <ScalarProperty Name="IdCoQuanBanHanhVanBan" ColumnName="IdCoQuanBanHanhVanBan" />
+                <ScalarProperty Name="IdLoaiVanBan" ColumnName="IdLoaiVanBan" />
+                <ScalarProperty Name="IdLinhVucBanHanh" ColumnName="IdLinhVucBanHanh" />
+                <ScalarProperty Name="SoVanBan" ColumnName="SoVanBan" />
+                <ScalarProperty Name="DateNgayPhatHanh" ColumnName="DateNgayPhatHanh" />
+                <ScalarProperty Name="TrichYeuVanBan" ColumnName="TrichYeuVanBan" />
+                <ScalarProperty Name="CommentGD" ColumnName="CommentGD" />
+                <ScalarProperty Name="NumberSoCongVan" ColumnName="NumberSoCongVan" />
+                <ScalarProperty Name="IDDonViChuTri" ColumnName="IDDonViChuTri" />
+                <ScalarProperty Name="IDDonVIPhoiHop" ColumnName="IDDonVIPhoiHop" />
+                <ScalarProperty Name="DateNgayChiDao" ColumnName="DateNgayChiDao" />
+                <ScalarProperty Name="DateNgayPhaiHoanThanh" ColumnName="DateNgayPhaiHoanThanh" />
+                <ScalarProperty Name="PhaiBaoCao" ColumnName="PhaiBaoCao" />
+                <ScalarProperty Name="NguoiNhanVanBan" ColumnName="NguoiNhanVanBan" />
+                <ScalarProperty Name="DateChuyenVanBanToiDonVi" ColumnName="DateChuyenVanBanToiDonVi" />
+                <ScalarProperty Name="HoanThanh" ColumnName="HoanThanh" />
+                <ScalarProperty Name="ChuaHoanThanh" ColumnName="ChuaHoanThanh" />
+                <ScalarProperty Name="DangThucHien" ColumnName="DangThucHien" />
+                <ScalarProperty Name="ChuaThucHien" ColumnName="ChuaThucHien" />
+                <ScalarProperty Name="ThucHienCham" ColumnName="ThucHienCham" />
+                <ScalarProperty Name="KetThucCongViec" ColumnName="KetThucCongViec" />
+                <ScalarProperty Name="TomTatKetQua" ColumnName="TomTatKetQua" />
+                <ScalarProperty Name="Patition" ColumnName="Patition" />
+                <ScalarProperty Name="TaiLIeuDinhKem" ColumnName="TaiLIeuDinhKem" />
+                <ScalarProperty Name="IdCanBoNhap" ColumnName="IdCanBoNhap" />
+                <ScalarProperty Name="DateHoanThanh" ColumnName="DateHoanThanh" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAllViewDonViVaCoQuan" FunctionName="QuanLyCongViecModel.Store.GetAllViewDonViVaCoQuan">
+          </FunctionImportMapping>
+          <EntitySetMapping Name="CoQuanBanHanhVanBan">
+            <EntityTypeMapping TypeName="QuanLyCongViecModel.CoQuanBanHanhVanBan">
+              <MappingFragment StoreEntitySet="CoQuanBanHanhVanBan">
+                <ScalarProperty Name="PrintName" ColumnName="PrintName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="TenCoQuan" ColumnName="TenCoQuan" />
+                <ScalarProperty Name="KyHieu" ColumnName="KyHieu" />
+                <ScalarProperty Name="InOrOut" ColumnName="InOrOut" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DonVi">
+            <EntityTypeMapping TypeName="QuanLyCongViecModel.DonVi">
+              <MappingFragment StoreEntitySet="DonVi">
+                <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+                <ScalarProperty Name="PrintName" ColumnName="PrintName" />
+                <ScalarProperty Name="TenDonVi" ColumnName="TenDonVi" />
+                <ScalarProperty Name="MaDonVi" ColumnName="MaDonVi" />
+                <ScalarProperty Name="InOrOut" ColumnName="InOrOut" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="AddCoQuanBanHanhVanBan" FunctionName="QuanLyCongViecModel.Store.AddCoQuanBanHanhVanBan" />
+          <FunctionImportMapping FunctionImportName="DeleteCoQuanBanHanhVanBan" FunctionName="QuanLyCongViecModel.Store.DeleteCoQuanBanHanhVanBan" />
+          <FunctionImportMapping FunctionImportName="EditCoQuanBanHanhVanBan" FunctionName="QuanLyCongViecModel.Store.EditCoQuanBanHanhVanBan" />
+          <FunctionImportMapping FunctionImportName="GetAllCoQuanBanhanhVanBan" FunctionName="QuanLyCongViecModel.Store.GetAllCoQuanBanhanhVanBan">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.GetAllCoQuanBanhanhVanBan_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="InOrOut" ColumnName="InOrOut" />
+                <ScalarProperty Name="KyHieu" ColumnName="KyHieu" />
+                <ScalarProperty Name="TenCoQuan" ColumnName="TenCoQuan" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="PrintName" ColumnName="PrintName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetOneCoQuanbanHanhVanBan" FunctionName="QuanLyCongViecModel.Store.GetOneCoQuanbanHanhVanBan">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.GetOneCoQuanbanHanhVanBan_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="InOrOut" ColumnName="InOrOut" />
+                <ScalarProperty Name="KyHieu" ColumnName="KyHieu" />
+                <ScalarProperty Name="TenCoQuan" ColumnName="TenCoQuan" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="PrintName" ColumnName="PrintName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="AddDonVi" FunctionName="QuanLyCongViecModel.Store.AddDonVi" />
+          <FunctionImportMapping FunctionImportName="DeleteDonVi" FunctionName="QuanLyCongViecModel.Store.DeleteDonVi" />
+          <FunctionImportMapping FunctionImportName="EditDonVi" FunctionName="QuanLyCongViecModel.Store.EditDonVi" />
+          <FunctionImportMapping FunctionImportName="GetAllDonvi" FunctionName="QuanLyCongViecModel.Store.GetAllDonvi">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.GetAllDonvi_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="InOrOut" ColumnName="InOrOut" />
+                <ScalarProperty Name="MaDonVi" ColumnName="MaDonVi" />
+                <ScalarProperty Name="TenDonVi" ColumnName="TenDonVi" />
+                <ScalarProperty Name="PrintName" ColumnName="PrintName" />
+                <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetOneDonVi" FunctionName="QuanLyCongViecModel.Store.GetOneDonVi">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.GetOneDonVi_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="InOrOut" ColumnName="InOrOut" />
+                <ScalarProperty Name="MaDonVi" ColumnName="MaDonVi" />
+                <ScalarProperty Name="TenDonVi" ColumnName="TenDonVi" />
+                <ScalarProperty Name="PrintName" ColumnName="PrintName" />
+                <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="ViewDonViVaCoQuan">
+            <EntityTypeMapping TypeName="QuanLyCongViecModel.ViewDonViVaCoQuan">
+              <MappingFragment StoreEntitySet="ViewDonViVaCoQuan">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="PrintName" ColumnName="PrintName" />
+                <ScalarProperty Name="TenCoQuan" ColumnName="TenCoQuan" />
+                <ScalarProperty Name="KyHieu" ColumnName="KyHieu" />
+                <ScalarProperty Name="InOrOut" ColumnName="InOrOut" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetAllCoQuanVaDonVi" FunctionName="QuanLyCongViecModel.Store.GetAllCoQuanVaDonVi">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.GetAllCoQuanVaDonVi_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="InOrOut" ColumnName="InOrOut" />
+                <ScalarProperty Name="KyHieu" ColumnName="KyHieu" />
+                <ScalarProperty Name="TenCoQuan" ColumnName="TenCoQuan" />
+                <ScalarProperty Name="PrintName" ColumnName="PrintName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="ViewGDKyBanHanh">
+            <EntityTypeMapping TypeName="QuanLyCongViecModel.ViewGDKyBanHanh">
+              <MappingFragment StoreEntitySet="ViewGDKyBanHanh">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IdCanBoNhap" ColumnName="IdCanBoNhap" />
+                <ScalarProperty Name="TaiLieuDinhKem" ColumnName="TaiLieuDinhKem" />
+                <ScalarProperty Name="TrichYeuVanBan" ColumnName="TrichYeuVanBan" />
+                <ScalarProperty Name="DateVanBan" ColumnName="DateVanBan" />
+                <ScalarProperty Name="NumberVanBan" ColumnName="NumberVanBan" />
+                <ScalarProperty Name="DateKyVanBan" ColumnName="DateKyVanBan" />
+                <ScalarProperty Name="DateTrinhVanBan" ColumnName="DateTrinhVanBan" />
+                <ScalarProperty Name="CanBoThamMuu" ColumnName="CanBoThamMuu" />
+                <ScalarProperty Name="TenLanhDao" ColumnName="TenLanhDao" />
+                <ScalarProperty Name="TenDonVi" ColumnName="TenDonVi" />
+                <ScalarProperty Name="NameVanBan" ColumnName="NameVanBan" />
+                <ScalarProperty Name="NameLinhVuc" ColumnName="NameLinhVuc" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetAllGDKyBanHanh" FunctionName="QuanLyCongViecModel.Store.GetAllGDKyBanHanh">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.GetAllGDKyBanHanh_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NameLinhVuc" ColumnName="NameLinhVuc" />
+                <ScalarProperty Name="NameVanBan" ColumnName="NameVanBan" />
+                <ScalarProperty Name="TenDonVi" ColumnName="TenDonVi" />
+                <ScalarProperty Name="TenLanhDao" ColumnName="TenLanhDao" />
+                <ScalarProperty Name="CanBoThamMuu" ColumnName="CanBoThamMuu" />
+                <ScalarProperty Name="DateTrinhVanBan" ColumnName="DateTrinhVanBan" />
+                <ScalarProperty Name="DateKyVanBan" ColumnName="DateKyVanBan" />
+                <ScalarProperty Name="NumberVanBan" ColumnName="NumberVanBan" />
+                <ScalarProperty Name="DateVanBan" ColumnName="DateVanBan" />
+                <ScalarProperty Name="TrichYeuVanBan" ColumnName="TrichYeuVanBan" />
+                <ScalarProperty Name="TaiLieuDinhKem" ColumnName="TaiLieuDinhKem" />
+                <ScalarProperty Name="IdCanBoNhap" ColumnName="IdCanBoNhap" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ViewGDVanBanDenGDNoComment" FunctionName="QuanLyCongViecModel.Store.ViewGDVanBanDenGDNoComment">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.ViewGDVanBanDenGDNoComment_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DateNgayNhan" ColumnName="DateNgayNhan" />
+                <ScalarProperty Name="KyHieu" ColumnName="KyHieu" />
+                <ScalarProperty Name="TenCoQuan" ColumnName="TenCoQuan" />
+                <ScalarProperty Name="NameVanBan" ColumnName="NameVanBan" />
+                <ScalarProperty Name="SoVanBan" ColumnName="SoVanBan" />
+                <ScalarProperty Name="DateNgayPhatHanh" ColumnName="DateNgayPhatHanh" />
+                <ScalarProperty Name="NameLinhVuc" ColumnName="NameLinhVuc" />
+                <ScalarProperty Name="TrichYeuVanBan" ColumnName="TrichYeuVanBan" />
+                <ScalarProperty Name="CommentGD" ColumnName="CommentGD" />
+                <ScalarProperty Name="NumberSoCongVan" ColumnName="NumberSoCongVan" />
+                <ScalarProperty Name="TenDonVi1" ColumnName="TenDonVi1" />
+                <ScalarProperty Name="TenDonVi2" ColumnName="TenDonVi2" />
+                <ScalarProperty Name="DateNgayChiDao" ColumnName="DateNgayChiDao" />
+                <ScalarProperty Name="DateNgayPhaiHoanThanh" ColumnName="DateNgayPhaiHoanThanh" />
+                <ScalarProperty Name="PhaiBaoCao" ColumnName="PhaiBaoCao" />
+                <ScalarProperty Name="NguoiNhanVanBan" ColumnName="NguoiNhanVanBan" />
+                <ScalarProperty Name="DateChuyenVanBanToiDonVi" ColumnName="DateChuyenVanBanToiDonVi" />
+                <ScalarProperty Name="TienDoCongViec" ColumnName="TienDoCongViec" />
+                <ScalarProperty Name="HoanThanh" ColumnName="HoanThanh" />
+                <ScalarProperty Name="TomTatKetQua" ColumnName="TomTatKetQua" />
+                <ScalarProperty Name="tailieu" ColumnName="tailieu" />
+                <ScalarProperty Name="DateHoanThanh" ColumnName="DateHoanThanh" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ViewGDVanBanDenHetHan" FunctionName="QuanLyCongViecModel.Store.ViewGDVanBanDenHetHan">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.ViewGDVanBanDenHetHan_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DateNgayNhan" ColumnName="DateNgayNhan" />
+                <ScalarProperty Name="KyHieu" ColumnName="KyHieu" />
+                <ScalarProperty Name="TenCoQuan" ColumnName="TenCoQuan" />
+                <ScalarProperty Name="NameVanBan" ColumnName="NameVanBan" />
+                <ScalarProperty Name="SoVanBan" ColumnName="SoVanBan" />
+                <ScalarProperty Name="DateNgayPhatHanh" ColumnName="DateNgayPhatHanh" />
+                <ScalarProperty Name="NameLinhVuc" ColumnName="NameLinhVuc" />
+                <ScalarProperty Name="TrichYeuVanBan" ColumnName="TrichYeuVanBan" />
+                <ScalarProperty Name="CommentGD" ColumnName="CommentGD" />
+                <ScalarProperty Name="NumberSoCongVan" ColumnName="NumberSoCongVan" />
+                <ScalarProperty Name="TenDonVi1" ColumnName="TenDonVi1" />
+                <ScalarProperty Name="TenDonVi2" ColumnName="TenDonVi2" />
+                <ScalarProperty Name="DateNgayChiDao" ColumnName="DateNgayChiDao" />
+                <ScalarProperty Name="DateNgayPhaiHoanThanh" ColumnName="DateNgayPhaiHoanThanh" />
+                <ScalarProperty Name="PhaiBaoCao" ColumnName="PhaiBaoCao" />
+                <ScalarProperty Name="NguoiNhanVanBan" ColumnName="NguoiNhanVanBan" />
+                <ScalarProperty Name="DateChuyenVanBanToiDonVi" ColumnName="DateChuyenVanBanToiDonVi" />
+                <ScalarProperty Name="TienDoCongViec" ColumnName="TienDoCongViec" />
+                <ScalarProperty Name="HoanThanh" ColumnName="HoanThanh" />
+                <ScalarProperty Name="TomTatKetQua" ColumnName="TomTatKetQua" />
+                <ScalarProperty Name="tailieu" ColumnName="tailieu" />
+                <ScalarProperty Name="DateHoanThanh" ColumnName="DateHoanThanh" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ViewGDVanBanDenSapHetHan" FunctionName="QuanLyCongViecModel.Store.ViewGDVanBanDenSapHetHan">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.ViewGDVanBanDenSapHetHan_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DateNgayNhan" ColumnName="DateNgayNhan" />
+                <ScalarProperty Name="KyHieu" ColumnName="KyHieu" />
+                <ScalarProperty Name="TenCoQuan" ColumnName="TenCoQuan" />
+                <ScalarProperty Name="NameVanBan" ColumnName="NameVanBan" />
+                <ScalarProperty Name="SoVanBan" ColumnName="SoVanBan" />
+                <ScalarProperty Name="DateNgayPhatHanh" ColumnName="DateNgayPhatHanh" />
+                <ScalarProperty Name="NameLinhVuc" ColumnName="NameLinhVuc" />
+                <ScalarProperty Name="TrichYeuVanBan" ColumnName="TrichYeuVanBan" />
+                <ScalarProperty Name="CommentGD" ColumnName="CommentGD" />
+                <ScalarProperty Name="NumberSoCongVan" ColumnName="NumberSoCongVan" />
+                <ScalarProperty Name="TenDonVi1" ColumnName="TenDonVi1" />
+                <ScalarProperty Name="TenDonVi2" ColumnName="TenDonVi2" />
+                <ScalarProperty Name="DateNgayChiDao" ColumnName="DateNgayChiDao" />
+                <ScalarProperty Name="DateNgayPhaiHoanThanh" ColumnName="DateNgayPhaiHoanThanh" />
+                <ScalarProperty Name="PhaiBaoCao" ColumnName="PhaiBaoCao" />
+                <ScalarProperty Name="NguoiNhanVanBan" ColumnName="NguoiNhanVanBan" />
+                <ScalarProperty Name="DateChuyenVanBanToiDonVi" ColumnName="DateChuyenVanBanToiDonVi" />
+                <ScalarProperty Name="TienDoCongViec" ColumnName="TienDoCongViec" />
+                <ScalarProperty Name="HoanThanh" ColumnName="HoanThanh" />
+                <ScalarProperty Name="TomTatKetQua" ColumnName="TomTatKetQua" />
+                <ScalarProperty Name="tailieu" ColumnName="tailieu" />
+                <ScalarProperty Name="DateHoanThanh" ColumnName="DateHoanThanh" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="ViewGDVanBanDen">
+            <EntityTypeMapping TypeName="QuanLyCongViecModel.ViewGDVanBanDen">
+              <MappingFragment StoreEntitySet="ViewGDVanBanDen">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="DateHoanThanh" ColumnName="DateHoanThanh" />
+                <ScalarProperty Name="tailieu" ColumnName="tailieu" />
+                <ScalarProperty Name="TomTatKetQua" ColumnName="TomTatKetQua" />
+                <ScalarProperty Name="HoanThanh" ColumnName="HoanThanh" />
+                <ScalarProperty Name="TienDoCongViec" ColumnName="TienDoCongViec" />
+                <ScalarProperty Name="DateChuyenVanBanToiDonVi" ColumnName="DateChuyenVanBanToiDonVi" />
+                <ScalarProperty Name="NguoiNhanVanBan" ColumnName="NguoiNhanVanBan" />
+                <ScalarProperty Name="PhaiBaoCao" ColumnName="PhaiBaoCao" />
+                <ScalarProperty Name="DateNgayPhaiHoanThanh" ColumnName="DateNgayPhaiHoanThanh" />
+                <ScalarProperty Name="DateNgayChiDao" ColumnName="DateNgayChiDao" />
+                <ScalarProperty Name="TenDonVi2" ColumnName="TenDonVi2" />
+                <ScalarProperty Name="TenDonVi1" ColumnName="TenDonVi1" />
+                <ScalarProperty Name="NumberSoCongVan" ColumnName="NumberSoCongVan" />
+                <ScalarProperty Name="CommentGD" ColumnName="CommentGD" />
+                <ScalarProperty Name="TrichYeuVanBan" ColumnName="TrichYeuVanBan" />
+                <ScalarProperty Name="NameLinhVuc" ColumnName="NameLinhVuc" />
+                <ScalarProperty Name="DateNgayPhatHanh" ColumnName="DateNgayPhatHanh" />
+                <ScalarProperty Name="SoVanBan" ColumnName="SoVanBan" />
+                <ScalarProperty Name="NameVanBan" ColumnName="NameVanBan" />
+                <ScalarProperty Name="TenCoQuan" ColumnName="TenCoQuan" />
+                <ScalarProperty Name="KyHieu" ColumnName="KyHieu" />
+                <ScalarProperty Name="DateNgayNhan" ColumnName="DateNgayNhan" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetAllGDVanBanDen" FunctionName="QuanLyCongViecModel.Store.GetAllGDVanBanDen">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.GetAllGDVanBanDen_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DateNgayNhan" ColumnName="DateNgayNhan" />
+                <ScalarProperty Name="KyHieu" ColumnName="KyHieu" />
+                <ScalarProperty Name="TenCoQuan" ColumnName="TenCoQuan" />
+                <ScalarProperty Name="NameVanBan" ColumnName="NameVanBan" />
+                <ScalarProperty Name="SoVanBan" ColumnName="SoVanBan" />
+                <ScalarProperty Name="DateNgayPhatHanh" ColumnName="DateNgayPhatHanh" />
+                <ScalarProperty Name="NameLinhVuc" ColumnName="NameLinhVuc" />
+                <ScalarProperty Name="TrichYeuVanBan" ColumnName="TrichYeuVanBan" />
+                <ScalarProperty Name="CommentGD" ColumnName="CommentGD" />
+                <ScalarProperty Name="NumberSoCongVan" ColumnName="NumberSoCongVan" />
+                <ScalarProperty Name="TenDonVi1" ColumnName="TenDonVi1" />
+                <ScalarProperty Name="TenDonVi2" ColumnName="TenDonVi2" />
+                <ScalarProperty Name="DateNgayChiDao" ColumnName="DateNgayChiDao" />
+                <ScalarProperty Name="DateNgayPhaiHoanThanh" ColumnName="DateNgayPhaiHoanThanh" />
+                <ScalarProperty Name="PhaiBaoCao" ColumnName="PhaiBaoCao" />
+                <ScalarProperty Name="NguoiNhanVanBan" ColumnName="NguoiNhanVanBan" />
+                <ScalarProperty Name="DateChuyenVanBanToiDonVi" ColumnName="DateChuyenVanBanToiDonVi" />
+                <ScalarProperty Name="TienDoCongViec" ColumnName="TienDoCongViec" />
+                <ScalarProperty Name="HoanThanh" ColumnName="HoanThanh" />
+                <ScalarProperty Name="TomTatKetQua" ColumnName="TomTatKetQua" />
+                <ScalarProperty Name="tailieu" ColumnName="tailieu" />
+                <ScalarProperty Name="DateHoanThanh" ColumnName="DateHoanThanh" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ExportVanBan" FunctionName="QuanLyCongViecModel.Store.ExportVanBan">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyCongViecModel.ExportVanBan_Result">
+                <ScalarProperty Name="NumberSoCongVan" ColumnName="NumberSoCongVan" />
+                <ScalarProperty Name="TenCoQuan" ColumnName="TenCoQuan" />
+                <ScalarProperty Name="InOrOut" ColumnName="InOrOut" />
+                <ScalarProperty Name="SoVanBan" ColumnName="SoVanBan" />
+                <ScalarProperty Name="DateNgayPhatHanh" ColumnName="DateNgayPhatHanh" />
+                <ScalarProperty Name="TrichYeuVanBan" ColumnName="TrichYeuVanBan" />
+                <ScalarProperty Name="CommentGD" ColumnName="CommentGD" />
+                <ScalarProperty Name="daumoinhanvb" ColumnName="daumoinhanvb" />
+                <ScalarProperty Name="NguoiNhanVanBan" ColumnName="NguoiNhanVanBan" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="29d8e7b1a9a54e5b9ebf7c30eb4ee1bf" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="QuanLyCongViecModel.CanBo" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCongViecModel.GDKyBanHanh" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCongViecModel.LanhDaoDonVi" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCongViecModel.LinhVucBanHanh" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCongViecModel.LoaiVanBan" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCongViecModel.CanBoTheoDoiVanBan" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="QuanLyCongViecModel.TheoDoiVanBan" Width="1.5" PointX="12.625" PointY="5.75" />
+        <EntityTypeShape EntityType="QuanLyCongViecModel.ViewTheoDoiVanBan" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="QuanLyCongViecModel.GDVanBanDen" Width="1.5" PointX="10.75" PointY="14" />
+        <AssociationConnector Association="QuanLyCongViecModel.FK_TheoDoiVanBan_GDVanBanDen" />
+        <EntityTypeShape EntityType="QuanLyCongViecModel.CoQuanBanHanhVanBan" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="QuanLyCongViecModel.DonVi" Width="1.5" PointX="0.75" PointY="2.625" />
+        <AssociationConnector Association="QuanLyCongViecModel.FK_CanBoNhap_DonVi" />
+        <AssociationConnector Association="QuanLyCongViecModel.FK_LanhDaoDonVi_DonVi" />
+        <EntityTypeShape EntityType="QuanLyCongViecModel.ViewDonViVaCoQuan" Width="1.5" PointX="7.375" PointY="3.75" />
+        <EntityTypeShape EntityType="QuanLyCongViecModel.ViewGDKyBanHanh" Width="1.5" PointX="8.75" PointY="6.75" />
+        <EntityTypeShape EntityType="QuanLyCongViecModel.ViewGDVanBanDen" Width="1.5" PointX="0.75" PointY="10.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
